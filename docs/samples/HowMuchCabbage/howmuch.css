@@ -1,0 +1,13 @@
+.center {
+    width:75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How Much Cabbage?</title>
+    <link rel="stylesheet" href="howmuch.css">
+    <script type="text/javascript" src="howmuch.js"></script>
+</head>
+<body>
+    <div id="score-div">Score : <span id="score">0</span></div>
+    <div id="level1" class="level center">
+        <div class="question center">How many cabbage do you see?</div>
+        <img src="level1.jpg" class="center"/>
+        <br>
+        <button type="button" class="center" onclick="doLevel1()">Answer</button>
+    </div>
+    <div id="level2" class="level center hidden">
+        <div class="question center">How many drama llamas do you see?</div>
+        <img src="llamas.jpg" class="center"/>
+        <br>
+        <button type="button" class="center" onclick="doLevel2()">Answer</button>
+    </div>
+    <div id="level3" class="level center hidden">
+        <div class="question center">How many giraffes do you see?</div>
+        <img src="elephants.jpg" class="center"/>
+        <br>
+        <button type="button" class="center" onclick="doLevel3()">Answer</button>
+    </div>
+</body>
+</html>
