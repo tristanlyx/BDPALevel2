@@ -16,7 +16,12 @@
     <li>
         Go to howmany.html. You will see 3 comments that say "Add a question here".
 
-        Replace these comments with questions about the picture. One question should be about a number e.g. "How many planes are there". One question should be about a string e.g. "What country is this". And one question should be about a boolean e.g. "Is this cool?"
+        Replace these comments with questions about the picture.
+        <ul>
+            <li>The first question should be about a string e.g. "What are these?"</li>
+            <li>The second question should be about a number e.g. "How many planes are there".</li>
+            <li>The third question should be abougt a boolean e.g. "Is this a town true/false?</li>
+        </ul>
         <br>
         <br>
         When you're done. Reload the page and verify that your questions are showing up.
@@ -49,13 +54,80 @@
         Good. Now would be a good time to add a doLevel2() and doLevel3() function to your javascript as well.
     </li>
     <li>
-
+        When the user finishes level1, we're going to want to hide level 1 and show level2. Likewise when the user finishes level2 and starts level3 we'll need to do the same. Add these two functions to your program:
+        <br>
+        <img src="showandhide.png"/>
+        <br>
+        The show() function takes an element id string, finds that element, and removes the 'hidden' css class from it.
+        <br>
+        <br>
+        The hide() function takes an element id string, finds that element, and adds the 'hidden' css class to it.
     </li>
+    <li>
+        You should be able to test out show and hide by using the console to hide('level1') and show('level2'):
+        <br>
+        <img src="showhideinconsole.png" />
+        <br>
+        Once you've tested things out, go on to the next step.
+    </li>
+    <li>
+        Really we'll want to to show and hide the levels after the user gives an answer. Remember that the doLevel1() function runs when you hit the answer button on level1. Likewise the doLevel2() function runs when you hit the answer button on level2() and the doLevel3() function runs when you hit the answer button on level3.
+        <br>
+        <br>
+        <ul>
+            <li> Add calls to hide and show to your doLevel1() function so that level1 gets hidden and level2 is shown. </li>
+            <li> Add calls to hide and show to your doLevel2() function so that level2 gets hidden and level3 is shown</li>
+            <li> Add a call to hide in your doLevel3() function so that level3() gets hidden when the user is done with the game</li>
+        </ul>
+    </li>
+    <li>
+        Once you've completed the previous step, test your game in the browser. Should should be able to cycle through the levels by clicking the answer button.
+    </li>
+    <li>
+        We'll need some javascript code that updates the number of points the user has. Add this code:
+        <br>
+        <img src="pointsFunction.png">
+    </li>
+    <li>
+        Call this function from the console to test it out. You should see the score on the upper left side of the screen change:
+        <br>
+        <img src="addpointsconsole.png"/>
+    </li>
+    <li>
+        Now that we have our levels setup and a way to keep score. We can start implementing the game play for each level. Level 1 should:
+        <ul>
+            <li>Prompt the user to enter their answer and store it in a variable</li>
+            <li>If the user entered the right answer, tell alert() "Congratulations you got it right". Call addPoints() to give them 10 points</li>
+            <li>else, alert() alert the user "Sorry the answer was [answer]" </li>
+            <li>hide level 1</li>
+            <li>show level 2</li>
+        </ul>
+        Test out level one in the browser. Test out both if the user gets it right or if the user gets it wrong.
+    </li>
+    <li>
+        Level 2 should:
+        <ul>
+            <li>Prompt the user to enter their answer and store it in a variable</li>
+            <li>Convert that answer from a string to a Number using Number()</li>
+            <li>If the user entered the right answer, alert() them, and give them some points</li>
+            <li>Otherwise tell the user what the right answer was</li>
+            <li>hide level 2</li>
+            <li>show level 3</li>
+        </ul>
+        Test out level 2 in the browser. Test out both if the user gets it right or if the user gets it wrong.
+    </li>
+    <li>
+        Level 3 should:
+        <ul>
+            <li>Prompt the user to enter their answer and store it in a variable</li>
+            <li>Convert that answer from a string to a Boolean using Boolean()</li>
+            <li>If the user entered the right answer, alert() them, and give them some points</li>
+            <li>Else tell them what the right answer was</li>
+            <li>Hide level 3</li>
+        </ul>
+    </li>
+    <li><b>BONUS #1:</b> If you get this far, try to add a final "Congratulations" screen that shows a celebratory picture and tells the user what their final score was</li>
+    <li><b>BONUS #2</b> If you get this far, try adding more levels to your game</li>
 </ol>
--add a picture for step 1, 2, and 3
--add questions for step 1 2 and 3
--add hide method
--add show method
--test in dev tools
 </body>
 </html>
