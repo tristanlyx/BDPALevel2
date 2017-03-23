@@ -2,6 +2,29 @@
 //Start is always at (0,10)
 //End is alwayse at (19, 10)
 
+/**
+ * Cool ideas:
+ * -Make things that require multiple cabbage men.
+ * -Maybe you can pass functions to your cabbage man that it will us to try to figure things out.
+ * -Maybe there are "traps" which only
+ *
+ * -Should add wait() which makes the environment progress 1 tick.
+ *
+ * Functions the cabage man should implement:
+ * --Maybe some kind of getPassword thing that does some calculation.
+ * --
+ *
+ * =====Level Ideas=====
+ * Level 1) Go straight across the open maze from the console (this one doesn't link to any js)
+ * Level 2) Just go straight across an open maze with 10 calls
+ * Level 3) You can pass a distance parameter
+ * Level 4) Practice moving through a static "easy" maze.
+ * Level 5) 1 More easy Maze
+ * Level 6)
+ *
+ *
+ */
+
 var CELLTYPES = {
     BOUNDARY: "boundary",
     OPEN: "open",
@@ -9,23 +32,29 @@ var CELLTYPES = {
     END: "end"
 };
 
+var gameOver = false;
 
 var MazeRunner = (function ($) {
     function getLevelDiv() {
         return $("#level");
     }
 
-    function getMazeDiv(){
+    function getMazeDiv() {
         return $("#maze");
     }
 
-    function createMazeContainerDiv(){
+    function createMazeContainerDiv() {
         getLevelDiv().append('<div id="maze"></div>')
     }
 
     function createCellDiv(cell) {
         var idString = cell.x + "_" + cell.y;
         getMazeDiv().append('<div id="' + idString + '" class="box ' + cell.type + '"></div>');
+    }
+
+    function getCellDiv(x, y) {
+        var idString = "#" + x + "_" + y;
+        return $(idString);
     }
 
     var maze = [];
@@ -67,7 +96,62 @@ var MazeRunner = (function ($) {
     }
 
     function CabbageMan() {
-        return this;
+        var _x = 0;
+        var _y = 10;
+
+        var doElMove = function (x1, y1, x2, y2) {
+            getCellDiv(x1, y1).html("");
+            getCellDiv(x2, y2).html("X");
+        };
+
+        var moveAllowed = function (x, y) {
+            if (gameOver) {
+                return false;
+            }
+
+            if (maze[x][y].type == CELLTYPES.BOUNDARY) {
+                return false;
+            }
+
+            return true;
+        };
+
+        var checkWin = function(){
+            if(maze[_x][_y].type == CELLTYPES.END){
+                gameOver = true;
+                alert("You won");
+            }
+        };
+
+        var moveTo = function (x, y) {
+            //Do move
+            if (moveAllowed(x, y)) {
+                doElMove(_x, _y, x, y);
+                _x = x;
+                _y = y;
+            } else {
+                gameOver = true;
+            }
+
+            //Check for done
+            checkWin();
+        };
+
+        doElMove(0, 0, _x, _y);
+        return {
+            moveLeft: function () {
+                moveTo(_x - 1, _y);
+            },
+            moveUp: function () {
+                moveTo(_x, _y - 1);
+            },
+            moveRight: function () {
+                moveTo(_x + 1, _y);
+            },
+            moveDown: function () {
+                moveTo(_x, _y + 1)
+            }
+        }
     }
 
     return {
