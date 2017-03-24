@@ -16,8 +16,8 @@
  *
  * =====Level Ideas=====
  * Level 1) Go straight across the open maze from the console (this one doesn't link to any js)
- *
  * Level 2) Just go straight across an open maze with 10 calls
+ *
  * Level 3) You can pass a distance parameter
  * Level 4) Practice moving through a static "easy" maze.
  * Level 5) 1 More easy Maze
@@ -34,7 +34,15 @@ var CELLTYPES = {
     END: "end"
 };
 
-var gameOver = false;
+var LEVELS = [
+    [], //Level 0
+    [], //Level 1
+    [], //Level 2
+    [{x:2, y:10, type:CELLTYPES.BOUNDARY}]
+];
+
+var playerWon = false;
+var playerLost = false;
 
 var MazeRunner = (function ($) {
     function getLevelDiv() {
@@ -83,6 +91,13 @@ var MazeRunner = (function ($) {
         maze[19][10] = new Cell(19, 10, CELLTYPES.END);
     }
 
+    function applyLevelCells(overrides){
+        for(var i = 0; i<overrides.length; i++){
+            var cell = overrides[i];
+            maze[cell.x][cell.y].type = cell.type;
+        }
+    }
+
     function createMazeDivs() {
         for (var y = 0; y < 20; y++) {
             for (var x = 0; x < 20; x++) {
@@ -92,6 +107,7 @@ var MazeRunner = (function ($) {
     }
 
     function doWin(){
+        playerWon = true;
         if(window.confirm("You won. Do you want to go to the next level?")){
             level = level + 1;
             window.location.href = "../level" + level + "/level" + level + ".html"
@@ -105,7 +121,7 @@ var MazeRunner = (function ($) {
             actionList.acceptingSubmissions = true;
             createMazeContainerDiv();
             initEmptyMaze();
-            //TODO: create level-specific stuff on this line.
+            applyLevelCells(LEVELS[levelNumber]);
             createMazeDivs();
 
             if (levelNumber == 1) {
@@ -114,10 +130,12 @@ var MazeRunner = (function ($) {
 
             if (typeof runLevel != "undefined") {
                 runLevel();
+                actionList.submit(function(){
+                    if (!playerWon) {
+                        alert("Warning! You didn't complete the maze");
+                    }
+                });
                 actionList.run();
-                if (!gameOver) {
-                    alert("Warning! You didn't complete the maze");//TODO: this actually needs to be submitted to the action list queue. 
-                }
             } else {
                 alert("Warning! runLevel function is not defined");
             }
@@ -148,6 +166,9 @@ var MazeRunner = (function ($) {
                 }
             };
             doStuff();
+        },
+        clear: function(){
+            actionList.actions = [];
         }
     };
 
@@ -162,10 +183,6 @@ var MazeRunner = (function ($) {
         };
 
         var moveAllowed = function (x, y) {
-            if (gameOver) {
-                return false;
-            }
-
             if (maze[x][y].type == CELLTYPES.BOUNDARY) {
                 return false;
             }
@@ -175,7 +192,6 @@ var MazeRunner = (function ($) {
 
         var checkWin = function () {
             if (maze[self._x][self._y].type == CELLTYPES.END) {
-                gameOver = true;
                 doWin();
             }
         };
@@ -187,7 +203,9 @@ var MazeRunner = (function ($) {
                 self._x = x;
                 self._y = y;
             } else {
-                gameOver = true;
+                playerLost = true;
+                alert("You Lost! couldn't move to x=" + x + " y=" + y);
+                actionList.clear();
             }
 
             //Check for done
