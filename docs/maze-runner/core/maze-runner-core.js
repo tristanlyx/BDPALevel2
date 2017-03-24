@@ -91,22 +91,40 @@ var MazeRunner = (function ($) {
         }
     }
 
-    function doRunLevel(levelNumber) { //Student fn is called runLevel
-        createMazeContainerDiv();
-        initEmptyMaze();
-        createMazeDivs();
-
-        if (levelNumber == 1) {
-            return; //we're done.
+    function doWin(){
+        if(window.confirm("You won. Do you want to go to the next level?")){
+            level = level + 1;
+            window.location.href = "../level" + level + "/level" + level + ".html"
         }
+    }
 
-        if (typeof runLevel != "undefined") {
-            runLevel();
-            if (!gameOver) {
-                alert("Warning! You didn't complete the maze");
+    var level;
+    function doRunLevel(levelNumber) { //Student fn is called runLevel
+        try {
+            level = levelNumber;
+            actionList.acceptingSubmissions = true;
+            createMazeContainerDiv();
+            initEmptyMaze();
+            //TODO: create level-specific stuff on this line.
+            createMazeDivs();
+
+            if (levelNumber == 1) {
+                return; //we're done.
             }
-        } else {
-            alert("Warning! runLevel function is not defined");
+
+            if (typeof runLevel != "undefined") {
+                runLevel();
+                actionList.run();
+                if (!gameOver) {
+                    alert("Warning! You didn't complete the maze");
+                }
+            } else {
+                alert("Warning! runLevel function is not defined");
+            }
+            actionList.acceptingSubmissions = false;
+        } catch (e){
+            actionList.acceptingSubmissions = false;
+            throw e;
         }
     }
 
@@ -158,7 +176,7 @@ var MazeRunner = (function ($) {
         var checkWin = function () {
             if (maze[self._x][self._y].type == CELLTYPES.END) {
                 gameOver = true;
-                alert("You won");
+                doWin();
             }
         };
 
@@ -220,3 +238,12 @@ var MazeRunner = (function ($) {
         actionList: actionList
     };
 })(jQuery);
+
+
+var davidSkipLevel1 = function(){
+    MazeRunner.actionList.acceptingSubmissions = false;
+    var cabbage = new MazeRunner.CabbageMan();
+    for(var i = 0; i<19; i++){
+        cabbage.moveRight();
+    }
+};
