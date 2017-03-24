@@ -17,8 +17,8 @@
  * =====Level Ideas=====
  * Level 1) Go straight across the open maze from the console (this one doesn't link to any js)
  * Level 2) Just go straight across an open maze with 10 calls
- *
  * Level 3) You can pass a distance parameter
+ *
  * Level 4) Practice moving through a static "easy" maze.
  * Level 5) 1 More easy Maze
  * Level 6)
@@ -38,7 +38,21 @@ var LEVELS = [
     [], //Level 0
     [], //Level 1
     [], //Level 2
-    [{x:2, y:10, type:CELLTYPES.BOUNDARY}]
+    [{x:2, y:10, type:CELLTYPES.BOUNDARY}],
+    [   //Upper left block
+        {x:1, y:1, type:CELLTYPES.BOUNDARY},{x:1, y:2, type:CELLTYPES.BOUNDARY},{x:1, y:3, type:CELLTYPES.BOUNDARY},{x:1, y:4, type:CELLTYPES.BOUNDARY}, {x:1, y:5, type:CELLTYPES.BOUNDARY},{x:1, y:6, type:CELLTYPES.BOUNDARY}, {x:2, y:1, type:CELLTYPES.BOUNDARY},{x:2, y:2, type:CELLTYPES.BOUNDARY},{x:2, y:3, type:CELLTYPES.BOUNDARY},{x:2, y:4, type:CELLTYPES.BOUNDARY},{x:2, y:5, type:CELLTYPES.BOUNDARY},{x:2, y:6, type:CELLTYPES.BOUNDARY}, {x:2, y:7, type:CELLTYPES.BOUNDARY},{x:2, y:8, type:CELLTYPES.BOUNDARY}, {x:2, y:9, type:CELLTYPES.BOUNDARY},
+        //Lower right block
+        {x:18, y:18, type:CELLTYPES.BOUNDARY}, {x:17, y:17, type:CELLTYPES.BOUNDARY},{x:16, y:16, type:CELLTYPES.BOUNDARY}, {x:15, y:15, type:CELLTYPES.BOUNDARY}, {x:15, y:16, type:CELLTYPES.BOUNDARY},{x:15, y:17, type:CELLTYPES.BOUNDARY},{x:15, y:18, type:CELLTYPES.BOUNDARY},{x:16, y:16, type:CELLTYPES.BOUNDARY},{x:17, y:16, type:CELLTYPES.BOUNDARY},{x:18, y:16, type:CELLTYPES.BOUNDARY},
+        //Middle block
+        {x:7, y:10, type:CELLTYPES.BOUNDARY}, {x:7, y:11, type:CELLTYPES.BOUNDARY}, {x:7, y:12, type:CELLTYPES.BOUNDARY}, {x:7, y:13, type:CELLTYPES.BOUNDARY}, {x:7, y:14, type:CELLTYPES.BOUNDARY},{x:7, y:15, type:CELLTYPES.BOUNDARY},{x:8, y:15, type:CELLTYPES.BOUNDARY},{x:9, y:15, type:CELLTYPES.BOUNDARY},{x:10, y:15, type:CELLTYPES.BOUNDARY},{x:11, y:15, type:CELLTYPES.BOUNDARY},{x:12, y:15, type:CELLTYPES.BOUNDARY},{x:13, y:15, type:CELLTYPES.BOUNDARY},
+        {x:1, y:7, type:CELLTYPES.BOUNDARY},{x:2, y:7, type:CELLTYPES.BOUNDARY},{x:2, y:8, type:CELLTYPES.BOUNDARY},{x:2, y:9, type:CELLTYPES.BOUNDARY},{x:2, y:10, type:CELLTYPES.BOUNDARY},{x:2, y:11, type:CELLTYPES.BOUNDARY},{x:2, y:12, type:CELLTYPES.BOUNDARY},{x:2, y:13, type:CELLTYPES.BOUNDARY},{x:2, y:14, type:CELLTYPES.BOUNDARY},{x:2, y:15, type:CELLTYPES.BOUNDARY},{x:2, y:16, type:CELLTYPES.BOUNDARY},{x:2, y:17, type:CELLTYPES.BOUNDARY},
+        {x:3, y:16, type:CELLTYPES.BOUNDARY},
+        {x:4, y:18, type:CELLTYPES.BOUNDARY},
+        {x:18, y:3, type:CELLTYPES.BOUNDARY}, {x:15, y:4, type:CELLTYPES.BOUNDARY},
+        {x:8, y:15, type:CELLTYPES.BOUNDARY},
+        {x:17, y:10, type:CELLTYPES.BOUNDARY},
+    ]
+
 ];
 
 var playerWon = false;
@@ -259,6 +273,15 @@ var MazeRunner = (function ($) {
         },
         initLevel4: function () {
             doRunLevel(4);
+        },
+        initLevel5: function(){
+            doRunLevel(5);
+        },
+        initLevel6: function(){
+            doRunLevel(6);
+        },
+        initLevel7: function(){
+            doRunLevel(7);
         },
         CabbageMan: CabbageMan,
         actionList: actionList
