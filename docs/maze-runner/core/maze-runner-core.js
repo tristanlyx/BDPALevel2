@@ -50,7 +50,25 @@ var LEVELS = [
         {x:4, y:18, type:CELLTYPES.BOUNDARY},
         {x:18, y:3, type:CELLTYPES.BOUNDARY}, {x:15, y:4, type:CELLTYPES.BOUNDARY},
         {x:8, y:15, type:CELLTYPES.BOUNDARY},
-        {x:17, y:10, type:CELLTYPES.BOUNDARY},
+        {x:17, y:10, type:CELLTYPES.BOUNDARY}
+    ],
+    [
+        //upper left block
+        {x:1, y:1, type:CELLTYPES.BOUNDARY},{x:1, y:2, type:CELLTYPES.BOUNDARY},{x:1, y:3, type:CELLTYPES.BOUNDARY},{x:1, y:4, type:CELLTYPES.BOUNDARY}, {x:1, y:5, type:CELLTYPES.BOUNDARY},{x:1, y:6, type:CELLTYPES.BOUNDARY}, {x:2, y:1, type:CELLTYPES.BOUNDARY},{x:2, y:2, type:CELLTYPES.BOUNDARY},{x:2, y:3, type:CELLTYPES.BOUNDARY},{x:2, y:4, type:CELLTYPES.BOUNDARY},{x:2, y:5, type:CELLTYPES.BOUNDARY},{x:2, y:6, type:CELLTYPES.BOUNDARY}, {x:2, y:7, type:CELLTYPES.BOUNDARY},{x:2, y:8, type:CELLTYPES.BOUNDARY}, {x:2, y:9, type:CELLTYPES.BOUNDARY}, {x:3, y:1, type:CELLTYPES.BOUNDARY}, {x:3, y:2, type:CELLTYPES.BOUNDARY}, {x:3, y:3, type:CELLTYPES.BOUNDARY}, {x:3, y:4, type:CELLTYPES.BOUNDARY}, {x:3, y:5, type:CELLTYPES.BOUNDARY}, {x:3, y:6, type:CELLTYPES.BOUNDARY}, {x:3, y:7, type:CELLTYPES.BOUNDARY},
+        //The go around
+        {x:1, y:11, type:CELLTYPES.BOUNDARY},{x:2, y:11, type:CELLTYPES.BOUNDARY}, {x:3, y:11, type:CELLTYPES.BOUNDARY},{x:4, y:11, type:CELLTYPES.BOUNDARY},{x:5, y:11, type:CELLTYPES.BOUNDARY},{x:4, y:10, type:CELLTYPES.BOUNDARY},{x:4, y:9, type:CELLTYPES.BOUNDARY},{x:5, y:9, type:CELLTYPES.BOUNDARY},{x:5, y:8, type:CELLTYPES.BOUNDARY},{x:5, y:7, type:CELLTYPES.BOUNDARY},{x:5, y:6, type:CELLTYPES.BOUNDARY},{x:5, y:5, type:CELLTYPES.BOUNDARY},{x:5, y:4, type:CELLTYPES.BOUNDARY},{x:5, y:3, type:CELLTYPES.BOUNDARY},{x:6, y:2, type:CELLTYPES.BOUNDARY},{x:5, y:9, type:CELLTYPES.BOUNDARY},{x:4, y:1, type:CELLTYPES.BOUNDARY},
+        //Lower right block
+        {x:18, y:18, type:CELLTYPES.BOUNDARY}, {x:17, y:17, type:CELLTYPES.BOUNDARY},{x:16, y:16, type:CELLTYPES.BOUNDARY}, {x:15, y:15, type:CELLTYPES.BOUNDARY}, {x:15, y:16, type:CELLTYPES.BOUNDARY},{x:15, y:17, type:CELLTYPES.BOUNDARY},{x:15, y:18, type:CELLTYPES.BOUNDARY},{x:16, y:16, type:CELLTYPES.BOUNDARY},{x:17, y:16, type:CELLTYPES.BOUNDARY},{x:18, y:16, type:CELLTYPES.BOUNDARY},{x:18, y:15, type:CELLTYPES.BOUNDARY},{x:18, y:14, type:CELLTYPES.BOUNDARY},{x:17, y:15, type:CELLTYPES.BOUNDARY},
+        //Middle block
+        {x:7, y:10, type:CELLTYPES.BOUNDARY}, {x:7, y:11, type:CELLTYPES.BOUNDARY}, {x:7, y:12, type:CELLTYPES.BOUNDARY}, {x:7, y:13, type:CELLTYPES.BOUNDARY}, {x:7, y:14, type:CELLTYPES.BOUNDARY},{x:7, y:15, type:CELLTYPES.BOUNDARY},{x:8, y:15, type:CELLTYPES.BOUNDARY},{x:9, y:15, type:CELLTYPES.BOUNDARY},{x:10, y:15, type:CELLTYPES.BOUNDARY},{x:11, y:15, type:CELLTYPES.BOUNDARY},{x:12, y:15, type:CELLTYPES.BOUNDARY},{x:13, y:15, type:CELLTYPES.BOUNDARY},
+        //Vertical bar
+        {x:8, y:1, type:CELLTYPES.BOUNDARY},{x:8, y:2, type:CELLTYPES.BOUNDARY},{x:8, y:3, type:CELLTYPES.BOUNDARY},{x:8, y:4, type:CELLTYPES.BOUNDARY},{x:8, y:5, type:CELLTYPES.BOUNDARY},{x:8, y:6, type:CELLTYPES.BOUNDARY},{x:8, y:7, type:CELLTYPES.BOUNDARY},{x:8, y:8, type:CELLTYPES.BOUNDARY},{x:8, y:9, type:CELLTYPES.BOUNDARY},{x:8, y:10, type:CELLTYPES.BOUNDARY},{x:8, y:11, type:CELLTYPES.BOUNDARY},{x:8, y:12, type:CELLTYPES.BOUNDARY},{x:8, y:13, type:CELLTYPES.BOUNDARY},{x:8, y:4, type:CELLTYPES.BOUNDARY},{x:8, y:15, type:CELLTYPES.BOUNDARY},{x:8, y:16, type:CELLTYPES.BOUNDARY},{x:8, y:17, type:CELLTYPES.BOUNDARY},
+        //rubble lower left
+        {x:6, y:15, type:CELLTYPES.BOUNDARY},{x:4, y:15, type:CELLTYPES.BOUNDARY},{x:3, y:15, type:CELLTYPES.BOUNDARY},{x:2, y:15, type:CELLTYPES.BOUNDARY},{x:1, y:15, type:CELLTYPES.BOUNDARY},
+        //Rubble upper right
+        {x:18, y:3, type:CELLTYPES.BOUNDARY}, {x:15, y:4, type:CELLTYPES.BOUNDARY},
+        //right bend
+        {x:18, y:11, type:CELLTYPES.BOUNDARY},{x:17, y:11, type:CELLTYPES.BOUNDARY},{x:16, y:11, type:CELLTYPES.BOUNDARY},{x:16, y:10, type:CELLTYPES.BOUNDARY},{x:16, y:9, type:CELLTYPES.BOUNDARY},{x:16, y:8, type:CELLTYPES.BOUNDARY},{x:16, y:7, type:CELLTYPES.BOUNDARY},
     ]
 
 ];
@@ -176,7 +194,7 @@ var MazeRunner = (function ($) {
                 actionList.actions[i]();
                 i++;
                 if (i < actionList.actions.length) {
-                    window.setTimeout(doStuff, 500);
+                    window.setTimeout(doStuff, 200);
                 }
             };
             doStuff();
