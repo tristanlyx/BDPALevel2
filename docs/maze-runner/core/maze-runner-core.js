@@ -214,28 +214,36 @@ var MazeRunner = (function ($) {
 
         doElMove(0, 0, self._x, self._y);
 
-        self.moveLeft = function () {
-            actionList.submit(function () {
-                moveTo(self._x - 1, self._y);
-            }.bind(self));
+        self.moveLeft = function (d) {
+            for(var i = 0; i < (d || 1); i++) {
+                actionList.submit(function () {
+                    moveTo(self._x - 1, self._y);
+                }.bind(self));
+            }
         };
 
-        self.moveUp = function () {
-            actionList.submit(function () {
-                moveTo(self._x, self._y - 1);
-            }.bind(self));
+        self.moveUp = function (d) {
+            for(var i = 0; i < (d || 1); i++) {
+                actionList.submit(function () {
+                    moveTo(self._x, self._y - 1);
+                }.bind(self));
+            }
         };
 
-        self.moveRight = function () {
-            actionList.submit(function () {
-                moveTo(self._x + 1, self._y);
-            }.bind(self));
+        self.moveRight = function (d) {
+            for(var i = 0; i < (d || 1); i++) {
+                actionList.submit(function () {
+                    moveTo(self._x + 1, self._y);
+                }.bind(self));
+            }
         };
 
-        self.moveDown = function () {
-            actionList.submit(function () {
-                moveTo(self._x, self._y + 1);
-            }.bind(self));
+        self.moveDown = function (d) {
+            for(var i = 0; i < (d || 1); i++) {
+                actionList.submit(function () {
+                    moveTo(self._x, self._y + 1);
+                }.bind(self));
+            }
         };
     }
 
