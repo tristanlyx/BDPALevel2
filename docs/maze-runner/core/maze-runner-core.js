@@ -116,7 +116,7 @@ var MazeRunner = (function ($) {
                 runLevel();
                 actionList.run();
                 if (!gameOver) {
-                    alert("Warning! You didn't complete the maze");
+                    alert("Warning! You didn't complete the maze");//TODO: this actually needs to be submitted to the action list queue. 
                 }
             } else {
                 alert("Warning! runLevel function is not defined");
@@ -144,7 +144,7 @@ var MazeRunner = (function ($) {
                 actionList.actions[i]();
                 i++;
                 if (i < actionList.actions.length) {
-                    window.setTimeout(doStuff, 2000);
+                    window.setTimeout(doStuff, 500);
                 }
             };
             doStuff();
