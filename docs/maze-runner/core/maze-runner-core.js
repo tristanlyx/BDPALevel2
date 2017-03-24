@@ -16,11 +16,13 @@
  *
  * =====Level Ideas=====
  * Level 1) Go straight across the open maze from the console (this one doesn't link to any js)
+ *
  * Level 2) Just go straight across an open maze with 10 calls
  * Level 3) You can pass a distance parameter
  * Level 4) Practice moving through a static "easy" maze.
  * Level 5) 1 More easy Maze
  * Level 6)
+ *
  *
  *
  */
@@ -89,11 +91,47 @@ var MazeRunner = (function ($) {
         }
     }
 
-    function createLevel() {
+    function doRunLevel(levelNumber) { //Student fn is called runLevel
         createMazeContainerDiv();
         initEmptyMaze();
         createMazeDivs();
+
+        if (levelNumber == 1) {
+            return; //we're done.
+        }
+
+        if (typeof runLevel != "undefined") {
+            runLevel();
+            if (!gameOver) {
+                alert("Warning! You didn't complete the maze");
+            }
+        } else {
+            alert("Warning! runLevel function is not defined");
+        }
     }
+
+    var actionList = {
+        actions: [],
+        acceptingSubmissions: false,
+        submit: function(fn){
+            if(actionList.acceptingSubmissions){
+                actionList.actions.push(fn);
+            } else {
+                fn();
+            }
+        },
+        run: function(){
+            var i = 0;
+            var doStuff = function(){
+                actionList.actions[i]();
+                i++;
+                if(i < actionList.actions.length){
+                    window.setTimeout(doStuff, 2000);
+                }
+            };
+            doStuff();
+        }
+    };
 
     function CabbageMan() {
         var _x = 0;
@@ -116,8 +154,8 @@ var MazeRunner = (function ($) {
             return true;
         };
 
-        var checkWin = function(){
-            if(maze[_x][_y].type == CELLTYPES.END){
+        var checkWin = function () {
+            if (maze[_x][_y].type == CELLTYPES.END) {
                 gameOver = true;
                 alert("You won");
             }
@@ -140,10 +178,10 @@ var MazeRunner = (function ($) {
         doElMove(0, 0, _x, _y);
         return {
             moveLeft: function () {
-                moveTo(_x - 1, _y);
+                actionList.submit(moveTo.bind(this, _x - 1, _y));
             },
             moveUp: function () {
-                moveTo(_x, _y - 1);
+                actionList.submit(moveTo.bind(this, _x, _y - 1));
             },
             moveRight: function () {
                 moveTo(_x + 1, _y);
@@ -156,8 +194,18 @@ var MazeRunner = (function ($) {
 
     return {
         initLevel1: function () {
-            createLevel();
+            doRunLevel(1);
         },
-        CabbageMan: CabbageMan
+        initLevel2: function () {
+            doRunLevel(2);
+        },
+        initLevel3: function () {
+            doRunLevel(3);
+        },
+        initLevel4: function () {
+            doRunLevel(4);
+        },
+        CabbageMan: CabbageMan,
+        actionList: actionList
     };
 })(jQuery);
