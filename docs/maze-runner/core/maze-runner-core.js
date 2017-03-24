@@ -113,19 +113,19 @@ var MazeRunner = (function ($) {
     var actionList = {
         actions: [],
         acceptingSubmissions: false,
-        submit: function(fn){
-            if(actionList.acceptingSubmissions){
+        submit: function (fn) {
+            if (actionList.acceptingSubmissions) {
                 actionList.actions.push(fn);
             } else {
                 fn();
             }
         },
-        run: function(){
+        run: function () {
             var i = 0;
-            var doStuff = function(){
+            var doStuff = function () {
                 actionList.actions[i]();
                 i++;
-                if(i < actionList.actions.length){
+                if (i < actionList.actions.length) {
                     window.setTimeout(doStuff, 2000);
                 }
             };
@@ -134,8 +134,9 @@ var MazeRunner = (function ($) {
     };
 
     function CabbageMan() {
-        var _x = 0;
-        var _y = 10;
+        var self = this;
+        self._x = 0;
+        self._y = 10;
 
         var doElMove = function (x1, y1, x2, y2) {
             getCellDiv(x1, y1).html("");
@@ -155,7 +156,7 @@ var MazeRunner = (function ($) {
         };
 
         var checkWin = function () {
-            if (maze[_x][_y].type == CELLTYPES.END) {
+            if (maze[self._x][self._y].type == CELLTYPES.END) {
                 gameOver = true;
                 alert("You won");
             }
@@ -164,9 +165,9 @@ var MazeRunner = (function ($) {
         var moveTo = function (x, y) {
             //Do move
             if (moveAllowed(x, y)) {
-                doElMove(_x, _y, x, y);
-                _x = x;
-                _y = y;
+                doElMove(self._x, self._y, x, y);
+                self._x = x;
+                self._y = y;
             } else {
                 gameOver = true;
             }
@@ -175,21 +176,31 @@ var MazeRunner = (function ($) {
             checkWin();
         };
 
-        doElMove(0, 0, _x, _y);
-        return {
-            moveLeft: function () {
-                actionList.submit(moveTo.bind(this, _x - 1, _y));
-            },
-            moveUp: function () {
-                actionList.submit(moveTo.bind(this, _x, _y - 1));
-            },
-            moveRight: function () {
-                moveTo(_x + 1, _y);
-            },
-            moveDown: function () {
-                moveTo(_x, _y + 1)
-            }
-        }
+        doElMove(0, 0, self._x, self._y);
+
+        self.moveLeft = function () {
+            actionList.submit(function () {
+                moveTo(self._x - 1, self._y);
+            }.bind(self));
+        };
+
+        self.moveUp = function () {
+            actionList.submit(function () {
+                moveTo(self._x, self._y - 1);
+            }.bind(self));
+        };
+
+        self.moveRight = function () {
+            actionList.submit(function () {
+                moveTo(self._x + 1, self._y);
+            }.bind(self));
+        };
+
+        self.moveDown = function () {
+            actionList.submit(function () {
+                moveTo(self._x, self._y + 1);
+            }.bind(self));
+        };
     }
 
     return {
