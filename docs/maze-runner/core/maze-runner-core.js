@@ -277,6 +277,16 @@ var LEVELS = [
         {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 11, type: CELLTYPES.BOUNDARY},{x: 6, y: 11, type: CELLTYPES.BOUNDARY},{x: 7, y: 11, type: CELLTYPES.BOUNDARY},{x: 8, y: 11, type: CELLTYPES.BOUNDARY},{x: 9, y: 11, type: CELLTYPES.BOUNDARY},{x: 10, y: 11, type: CELLTYPES.BOUNDARY},{x: 11, y: 11, type: CELLTYPES.BOUNDARY},{x: 12, y: 11, type: CELLTYPES.BOUNDARY},{x: 13, y: 11, type: CELLTYPES.BOUNDARY},{x: 14, y: 11, type: CELLTYPES.BOUNDARY},{x: 15, y: 11, type: CELLTYPES.BOUNDARY},{x: 16, y: 11, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
         //Easy password2
         {x: 2, y: 10, type: CELLTYPES.EASY_PASSWORD2}, {x: 4, y: 10, type: CELLTYPES.EASY_PASSWORD2}
+    ],
+    [
+        //Row 1
+        {x: 1, y: 9, type: CELLTYPES.BOUNDARY},{x: 2, y: 9, type: CELLTYPES.BOUNDARY},{x: 3, y: 9, type: CELLTYPES.BOUNDARY},{x: 4, y: 7, type: CELLTYPES.BOUNDARY},{x: 5, y: 7, type: CELLTYPES.BOUNDARY},{x: 6, y: 7, type: CELLTYPES.BOUNDARY},{x: 7, y: 7, type: CELLTYPES.BOUNDARY},{x: 8, y: 7, type: CELLTYPES.BOUNDARY},{x: 9, y: 7, type: CELLTYPES.BOUNDARY},{x: 10, y: 7, type: CELLTYPES.BOUNDARY},{x: 11, y: 7, type: CELLTYPES.BOUNDARY},{x: 12, y: 7, type: CELLTYPES.BOUNDARY},{x: 13, y: 7, type: CELLTYPES.BOUNDARY},{x: 14, y: 7, type: CELLTYPES.BOUNDARY},{x: 15, y: 7, type: CELLTYPES.BOUNDARY},{x: 16, y: 7, type: CELLTYPES.BOUNDARY},{x: 17, y: 7, type: CELLTYPES.BOUNDARY},{x: 18, y: 7, type: CELLTYPES.BOUNDARY},
+        {x: 3, y:8, type: CELLTYPES.BOUNDARY},{x: 3, y:7, type: CELLTYPES.BOUNDARY},
+        //Row 2
+        {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 9, type: CELLTYPES.BOUNDARY},{x: 6, y: 9, type: CELLTYPES.BOUNDARY},{x: 7, y: 9, type: CELLTYPES.BOUNDARY},{x: 8, y: 9, type: CELLTYPES.BOUNDARY},{x: 9, y: 9, type: CELLTYPES.BOUNDARY},{x: 10, y: 9, type: CELLTYPES.BOUNDARY},{x: 11, y: 9, type: CELLTYPES.BOUNDARY},{x: 12, y: 9, type: CELLTYPES.BOUNDARY},{x: 13, y: 9, type: CELLTYPES.BOUNDARY},{x: 14, y: 9, type: CELLTYPES.BOUNDARY},{x: 15, y: 9, type: CELLTYPES.BOUNDARY},{x: 16, y: 9, type: CELLTYPES.BOUNDARY},{x: 17, y: 9, type: CELLTYPES.BOUNDARY},
+        {x: 5, y:11, type: CELLTYPES.BOUNDARY},{x: 5, y:10, type: CELLTYPES.BOUNDARY}, {x: 17, y: 10, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
+        //Easy password2
+        {x: 4, y: 9, type: CELLTYPES.EASY_PASSWORD2},{x: 18, y: 9, type: CELLTYPES.EASY_PASSWORD2}
     ]
 
 ];
@@ -562,6 +572,12 @@ var MazeRunner = (function ($) {
 
                 if(typeof fn != "function"){
                     doLose("Your decide function wasn't a function. Instead it was " + fn);
+                    return;
+                }
+
+
+                if(maze[x][y].type.indexOf("password") ==-1){
+                    doLose("You tried to say a password, but cabbage man isn't at a password block");
                     return;
                 }
 
