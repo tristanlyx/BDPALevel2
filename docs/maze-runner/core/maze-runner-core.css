@@ -19,6 +19,8 @@ h1 {
     height: 48px;
     border: 1px dashed black;
     float: left;
+    line-height: 48px;
+    text-align: center;
 }
 
 .boundary {

@@ -288,6 +288,11 @@ var MazeRunner = (function ($) {
         $(idString).removeClass(cell.type).addClass(CELLTYPES.OPEN);
     }
 
+    function renderPrompt(cell){
+        var idString = "#" + cell.x + "_" + cell.y;
+        $(idString).html(cell.prompt.prompt);
+    }
+
     function getCellDiv(x, y) {
         var idString = "#" + x + "_" + y;
         return $(idString);
@@ -332,6 +337,18 @@ var MazeRunner = (function ($) {
         }
     }
 
+    function assignPrompts(){
+        for(var x = 0; x < 20; x++){
+            for(var y = 0; y < 20; y++){
+                var cell = maze[x][y];
+                if(cell.type.indexOf("password") > -1){
+                    cell.prompt = createPasswordPrompt(x, y);
+                    renderPrompt(cell);
+                }
+            }
+        }
+    }
+
     function doWin() {
         playerWon = true;
         if (window.confirm("You won. Do you want to go to the next level?")) {
@@ -356,6 +373,7 @@ var MazeRunner = (function ($) {
             initEmptyMaze();
             applyLevelCells(LEVELS[levelNumber]);
             createMazeDivs();
+            assignPrompts();
 
             if (levelNumber == 1) {
                 return; //we're done.
@@ -406,10 +424,23 @@ var MazeRunner = (function ($) {
     };
 
     function createPasswordPrompt(x, y) {
+        var cell = maze[x][y];
         var expected = "";
         var prompt = "";
+
+        if(cell.type==CELLTYPES.EASY_PASSWORD){
+            prompt = Math.floor(Math.random()*10);
+            return prompt > 5 ? {expected: "BIG", prompt: prompt} : {expected : "SMALL", prompt: prompt};
+        }
+
         return {expected: expected, prompt: prompt};
     }
+
+    function doTick(){
+        assignPrompts();
+    }
+
+
 
     function CabbageMan() {
         var self = this;
@@ -441,6 +472,9 @@ var MazeRunner = (function ($) {
         };
 
         var moveTo = function (x, y) {
+            //do tick
+            doTick();
+
             //Do move
             if (moveAllowed(x, y)) {
                 doElMove(self._x, self._y, x, y);
@@ -489,7 +523,7 @@ var MazeRunner = (function ($) {
         };
 
         self.calculatePassword = function (dir, fn) {
-            dir = (+dir || "").toUpperCase();
+            dir = ("" + dir || "").toUpperCase();
             actionList.submit(function () {
                 var x, y;
                 if (dir == "LEFT") {
@@ -508,10 +542,16 @@ var MazeRunner = (function ($) {
                     doLose("I expected a direction but you said " + dir);
                     return;
                 }
-                var prompt = createPasswordPrompt(x, y);
+                var prompt = maze[x][y].prompt;
+
+                if(typeof fn != "function"){
+                    doLose("Your decide function wasn't a function. Instead it was " + fn);
+                    return;
+                }
 
                 var userAnswer = fn(prompt.prompt);
                 if (prompt.expected === userAnswer) {
+                    makeOpen(maze[x][y]);
                     maze[x][y].type = CELLTYPES.OPEN;
                 } else {
                     doLose("The block said " + prompt.prompt + " and you said " + userAnswer +
