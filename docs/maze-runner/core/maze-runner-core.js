@@ -269,6 +269,14 @@ var LEVELS = [
         {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 11, type: CELLTYPES.BOUNDARY},{x: 6, y: 11, type: CELLTYPES.BOUNDARY},{x: 7, y: 11, type: CELLTYPES.BOUNDARY},{x: 8, y: 11, type: CELLTYPES.BOUNDARY},{x: 9, y: 11, type: CELLTYPES.BOUNDARY},{x: 10, y: 11, type: CELLTYPES.BOUNDARY},{x: 11, y: 11, type: CELLTYPES.BOUNDARY},{x: 12, y: 11, type: CELLTYPES.BOUNDARY},{x: 13, y: 11, type: CELLTYPES.BOUNDARY},{x: 14, y: 11, type: CELLTYPES.BOUNDARY},{x: 15, y: 11, type: CELLTYPES.BOUNDARY},{x: 16, y: 11, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
         //Easy password2
         {x: 2, y: 10, type: CELLTYPES.EASY_PASSWORD2}
+    ],
+    [
+        //Row 1
+        {x: 1, y: 9, type: CELLTYPES.BOUNDARY},{x: 2, y: 9, type: CELLTYPES.BOUNDARY},{x: 3, y: 9, type: CELLTYPES.BOUNDARY},{x: 4, y: 9, type: CELLTYPES.BOUNDARY},{x: 5, y: 9, type: CELLTYPES.BOUNDARY},{x: 6, y: 9, type: CELLTYPES.BOUNDARY},{x: 7, y: 9, type: CELLTYPES.BOUNDARY},{x: 8, y: 9, type: CELLTYPES.BOUNDARY},{x: 9, y: 9, type: CELLTYPES.BOUNDARY},{x: 10, y: 9, type: CELLTYPES.BOUNDARY},{x: 11, y: 9, type: CELLTYPES.BOUNDARY},{x: 12, y: 9, type: CELLTYPES.BOUNDARY},{x: 13, y: 9, type: CELLTYPES.BOUNDARY},{x: 14, y: 9, type: CELLTYPES.BOUNDARY},{x: 15, y: 9, type: CELLTYPES.BOUNDARY},{x: 16, y: 9, type: CELLTYPES.BOUNDARY},{x: 17, y: 9, type: CELLTYPES.BOUNDARY},{x: 18, y: 9, type: CELLTYPES.BOUNDARY},
+        //Row 2
+        {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 11, type: CELLTYPES.BOUNDARY},{x: 6, y: 11, type: CELLTYPES.BOUNDARY},{x: 7, y: 11, type: CELLTYPES.BOUNDARY},{x: 8, y: 11, type: CELLTYPES.BOUNDARY},{x: 9, y: 11, type: CELLTYPES.BOUNDARY},{x: 10, y: 11, type: CELLTYPES.BOUNDARY},{x: 11, y: 11, type: CELLTYPES.BOUNDARY},{x: 12, y: 11, type: CELLTYPES.BOUNDARY},{x: 13, y: 11, type: CELLTYPES.BOUNDARY},{x: 14, y: 11, type: CELLTYPES.BOUNDARY},{x: 15, y: 11, type: CELLTYPES.BOUNDARY},{x: 16, y: 11, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
+        //Easy password2
+        {x: 2, y: 10, type: CELLTYPES.EASY_PASSWORD2}, {x: 4, y: 10, type: CELLTYPES.EASY_PASSWORD2}
     ]
 
 ];
@@ -470,15 +478,7 @@ var MazeRunner = (function ($) {
 
         var moveAllowed = function (x, y) {
             var type = maze[x][y].type;
-            if (type == CELLTYPES.BOUNDARY) {
-                return false;
-            }
-
-            if(type == CELLTYPES.EASY_PASSWORD){
-                return false;
-            }
-
-            return true;
+            return !(type != CELLTYPES.OPEN && type != CELLTYPES.START && type != CELLTYPES.END);
         };
 
         var checkWin = function () {
