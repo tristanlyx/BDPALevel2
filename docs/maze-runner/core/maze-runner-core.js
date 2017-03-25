@@ -39,7 +39,8 @@ var CELLTYPES = {
     START: "start",
     END: "end",
     EASY_PASSWORD: "easy-password",
-    EASY_PASSWORD2: "easy-password-2"
+    EASY_PASSWORD2: "easy-password-2",
+    EASY_PASSWORD3: "easy-password-3"
 };
 
 var LEVELS = [
@@ -287,7 +288,17 @@ var LEVELS = [
         {x: 5, y:11, type: CELLTYPES.BOUNDARY},{x: 5, y:10, type: CELLTYPES.BOUNDARY}, {x: 17, y: 10, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
         //Easy password2
         {x: 4, y: 9, type: CELLTYPES.EASY_PASSWORD2},{x: 18, y: 9, type: CELLTYPES.EASY_PASSWORD2}
-    ]
+    ],
+    [
+        //Offshoots
+        {x: 4, y: 8, type: CELLTYPES.BOUNDARY},{x: 4, y: 7, type: CELLTYPES.BOUNDARY},{x: 4, y: 6, type: CELLTYPES.BOUNDARY},{x: 4, y: 5, type: CELLTYPES.BOUNDARY},{x: 5, y: 5, type: CELLTYPES.BOUNDARY},{x: 6, y: 5, type: CELLTYPES.BOUNDARY},{x: 6, y: 6, type: CELLTYPES.BOUNDARY},{x: 6, y: 7, type: CELLTYPES.BOUNDARY},{x: 6, y: 8, type: CELLTYPES.BOUNDARY},
+        //Row 1
+        {x: 1, y: 9, type: CELLTYPES.BOUNDARY},{x: 2, y: 9, type: CELLTYPES.BOUNDARY},{x: 3, y: 9, type: CELLTYPES.BOUNDARY},{x: 4, y: 9, type: CELLTYPES.BOUNDARY},{x: 6, y: 9, type: CELLTYPES.BOUNDARY},{x: 7, y: 9, type: CELLTYPES.BOUNDARY},{x: 8, y: 9, type: CELLTYPES.BOUNDARY},{x: 9, y: 9, type: CELLTYPES.BOUNDARY},{x: 10, y: 9, type: CELLTYPES.BOUNDARY},{x: 11, y: 9, type: CELLTYPES.BOUNDARY},{x: 12, y: 9, type: CELLTYPES.BOUNDARY},{x: 13, y: 9, type: CELLTYPES.BOUNDARY},{x: 14, y: 9, type: CELLTYPES.BOUNDARY},{x: 15, y: 9, type: CELLTYPES.BOUNDARY},{x: 16, y: 9, type: CELLTYPES.BOUNDARY},{x: 17, y: 9, type: CELLTYPES.BOUNDARY},{x: 18, y: 9, type: CELLTYPES.BOUNDARY},
+        //Row 2
+        {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 11, type: CELLTYPES.BOUNDARY},{x: 6, y: 11, type: CELLTYPES.BOUNDARY},{x: 7, y: 11, type: CELLTYPES.BOUNDARY},{x: 8, y: 11, type: CELLTYPES.BOUNDARY},{x: 9, y: 11, type: CELLTYPES.BOUNDARY},{x: 10, y: 11, type: CELLTYPES.BOUNDARY},{x: 11, y: 11, type: CELLTYPES.BOUNDARY},{x: 12, y: 11, type: CELLTYPES.BOUNDARY},{x: 13, y: 11, type: CELLTYPES.BOUNDARY},{x: 14, y: 11, type: CELLTYPES.BOUNDARY},{x: 15, y: 11, type: CELLTYPES.BOUNDARY},{x: 16, y: 11, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
+        //Easy password2
+        {x: 2, y: 10, type: CELLTYPES.EASY_PASSWORD3}, {x: 4, y: 10, type: CELLTYPES.EASY_PASSWORD3}
+    ],
 
 ];
 
@@ -465,6 +476,11 @@ var MazeRunner = (function ($) {
         if(cell.type==CELLTYPES.EASY_PASSWORD2){
             prompt = Math.floor(Math.random()*2) + 2;
             return prompt > 1 ? {expected: "BIG", prompt: prompt} : {expected : "SMALL", prompt: prompt};
+        }
+
+        if(cell.type==CELLTYPES.EASY_PASSWORD3){
+            prompt = Math.floor(Math.random()*10);
+            return {expected : (prompt * 2) + 1, prompt: prompt};
         }
 
         return {expected: expected, prompt: prompt};
