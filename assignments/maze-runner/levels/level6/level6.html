@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze Game</title>
+    <link rel="stylesheet" type="text/css" href="../../core/maze-runner-core.css"/>
+    <script src="../../core/jquery-3.2.0.js"></script>
+    <script src="../../core/maze-runner-core.js"></script>
+    <script src="level6.js"></script>
+    <script>
+        window.onload = function(){
+            MazeRunner.initLevel6();
+        }
+    </script>
+</head>
+<body>
+<h2>Level 6</h2>
+<ul>
+    <li>This level introduces the blue "password" box. In order to get past this box, you will need to make cabbage man say the correct password</li>
+    <li>Start out by defining this function: <br><code>function runLevel(){
+        <br> &emsp; var cabbageMan = new MazeRunner.CabbageMan();
+        <br> &emsp; cabbageMan.moveRight();
+        <br> &emsp;
+        <br> &emsp; cabbageMan.moveRight(18);
+        <br> }</code>
+        <br>
+    </li>
+    <li>You'll notice that you can't yet get past the blue block. This particular blue bock requires that you take the number inside and say "BIG" if it's bigger than five, and "SMALL" if it's less than or equal to five</li>
+    <li>Define a definePassword function like this. <code>prompt</code> will be the value of whatever's in the blue box <br> <code>
+        function decidePassword(prompt){
+        <br>&emsp;if(prompt > 5){
+        <br> &emsp; &emsp; return "BIG";
+        <br> &emsp;} else {
+        <br> &emsp; &emsp;return "SMALL";
+        <br> &emsp;}
+       <br> }
+    </code></li>
+    <li>Finally we need to tell cabbageMan that he should use the decidePassword function after he moves right. We do this by calling the <code>calculatePassword</code> function. Add this line of code as the third line of your runLevel function: <br><code>cabbageMan.calculatePassword("RIGHT", decidePassword);</code><br> This tells cabbageMan to calculate the password for the box on the "RIGHT" using the decide password function.</li>
+    <li>When you're done your code should look like this: <br> <img width="500px;" src="../../core/level6.png"/></li>
+</ul>
+<div id="level"></div>
+</body>
+</html>

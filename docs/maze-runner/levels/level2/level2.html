@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze Game</title>
+    <link rel="stylesheet" type="text/css" href="../../core/maze-runner-core.css"/>
+    <script src="../../core/jquery-3.2.0.js"></script>
+    <script src="../../core/maze-runner-core.js"></script>
+    <script src="level2.js"></script>
+    <script>
+        window.onload = function(){
+            MazeRunner.initLevel2();
+        }
+    </script>
+</head>
+<body>
+<h2>Level 2</h2>
+<ul>
+    <li>Go to level2.js and add define the runLevel function: <br> <code>function runLevel(){<br><br>}</code></li>
+    <li>Once you've done this, you should stop seeing the error about runLevel not being defined. But instead you'll see an error about you haven't completed the maze. This is because your function ran, but cabbage man hasn't made it to the end of the maze yet</li>
+    <li>Add <code>var cabbageMan = new MazeRunner.CabbageMan()</code> to create the cabbage man</li>
+    <li>Add 19 calls to <code>cabbageMan.moveRight()</code> and re run your code. Cabbage man should make it to the other side of the maze, and you should be able to advance to level 3</li>
+</ul>
+<div id="level"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze Game</title>
+    <link rel="stylesheet" type="text/css" href="../../core/maze-runner-core.css"/>
+    <script src="../../core/jquery-3.2.0.js"></script>
+    <script src="../../core/maze-runner-core.js"></script>
+    <script>
+        window.onload = function(){
+            MazeRunner.initLevel1();
+        }
+    </script>
+</head>
+<body>
+<h1>Level 1</h1>
+<ul>
+    <li>Open the console and type in <code>var cabbageMan = new MazeRunner.CabbageMan()</code>. Notice how this makes the cabbage man show up in the game.</li>
+    <li>Now run <code>cabbageMan.moveRight()</code> You should see the cabbage man move right.</li>
+    <li>Do it again! <code>cabbageMan.moveRight()</code> You should see the cabbage man move right.s</li>
+    <li>Now run <code>cabbageMan.moveLeft()</code> You should see the cabbage man move left</li>
+    <li>Now try <code> cabbageMan.moveUp()</code> and <code>cabbageMan.moveDown()</code></li>
+    <li>Use the movement commands you learned above to get the cabbage man all the way to the green square</li>
+</ul>
+<div id="level"></div>
+</body>
+</html>

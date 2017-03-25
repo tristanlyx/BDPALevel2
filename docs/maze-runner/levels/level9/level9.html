@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze Game</title>
+    <link rel="stylesheet" type="text/css" href="../../core/maze-runner-core.css"/>
+    <script src="../../core/jquery-3.2.0.js"></script>
+    <script src="../../core/maze-runner-core.js"></script>
+    <script src="level9.js"></script>
+    <script>
+        window.onload = function(){
+            MazeRunner.initLevel9();
+        }
+    </script>
+</head>
+<body>
+<h2>Level 9</h2>
+<ul>
+    <li>The password is still "BIG" if the prompt is greater than 1, and "SMALL" otherwise</li>
+    <li>There are still two boxes</li>
+    <li>The <b>difference</b> is that you now need to tell cabbage man to calculate the password for <b>UP</b> and <b>DOWN</b> instead of right. I.e. you will use:<br> <code>cabbageMan.calculatePassword("UP", decidePassword);</code><br> and <br><code>cabbageMan.calculatePassword("DOWN", decidePassword);</code></li>
+</ul>
+<div id="level"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+body{
+    background-color: #ffeaff;
+}
+
+h1 {
+    text-align: center;
+}
+
+li {
+    margin: 0 0 1em 0;
+}
+
+#level {
+    width:75%;
+    margin: 0 auto;
+}
+
+#maze{
+    width: 1000px;
+    height: 1000px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.box {
+    width: 48px;
+    height: 48px;
+    border: 1px dashed black;
+    float: left;
+    line-height: 48px;
+    text-align: center;
+}
+
+.boundary {
+    background-color: black;
+}
+
+.start {
+    background-color: grey;
+}
+
+.end {
+    background-color: green;
+}
+
+.easy-password, .easy-password-2, .easy-password-3{
+    background-color: aqua;
+}
