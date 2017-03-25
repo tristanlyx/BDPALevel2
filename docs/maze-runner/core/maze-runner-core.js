@@ -3,6 +3,8 @@
 //End is alwayse at (19, 10)
 
 /**
+ * TODO: This code is a train wreck, but it works. ...mostly.
+ *
  * Cool ideas:
  * -Make things that require multiple cabbage men.
  * -Maybe you can pass functions to your cabbage man that it will us to try to figure things out.
@@ -36,7 +38,8 @@ var CELLTYPES = {
     OPEN: "open",
     START: "start",
     END: "end",
-    EASY_PASSWORD: "easy-password"
+    EASY_PASSWORD: "easy-password",
+    EASY_PASSWORD2: "easy-password-2"
 };
 
 var LEVELS = [
@@ -258,6 +261,14 @@ var LEVELS = [
         {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 11, type: CELLTYPES.BOUNDARY},{x: 6, y: 11, type: CELLTYPES.BOUNDARY},{x: 7, y: 11, type: CELLTYPES.BOUNDARY},{x: 8, y: 11, type: CELLTYPES.BOUNDARY},{x: 9, y: 11, type: CELLTYPES.BOUNDARY},{x: 10, y: 11, type: CELLTYPES.BOUNDARY},{x: 11, y: 11, type: CELLTYPES.BOUNDARY},{x: 12, y: 11, type: CELLTYPES.BOUNDARY},{x: 13, y: 11, type: CELLTYPES.BOUNDARY},{x: 14, y: 11, type: CELLTYPES.BOUNDARY},{x: 15, y: 11, type: CELLTYPES.BOUNDARY},{x: 16, y: 11, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
         //Easy password
         {x: 2, y: 10, type: CELLTYPES.EASY_PASSWORD}
+    ],
+    [
+        //Row 1
+        {x: 1, y: 9, type: CELLTYPES.BOUNDARY},{x: 2, y: 9, type: CELLTYPES.BOUNDARY},{x: 3, y: 9, type: CELLTYPES.BOUNDARY},{x: 4, y: 9, type: CELLTYPES.BOUNDARY},{x: 5, y: 9, type: CELLTYPES.BOUNDARY},{x: 6, y: 9, type: CELLTYPES.BOUNDARY},{x: 7, y: 9, type: CELLTYPES.BOUNDARY},{x: 8, y: 9, type: CELLTYPES.BOUNDARY},{x: 9, y: 9, type: CELLTYPES.BOUNDARY},{x: 10, y: 9, type: CELLTYPES.BOUNDARY},{x: 11, y: 9, type: CELLTYPES.BOUNDARY},{x: 12, y: 9, type: CELLTYPES.BOUNDARY},{x: 13, y: 9, type: CELLTYPES.BOUNDARY},{x: 14, y: 9, type: CELLTYPES.BOUNDARY},{x: 15, y: 9, type: CELLTYPES.BOUNDARY},{x: 16, y: 9, type: CELLTYPES.BOUNDARY},{x: 17, y: 9, type: CELLTYPES.BOUNDARY},{x: 18, y: 9, type: CELLTYPES.BOUNDARY},
+        //Row 2
+        {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 11, type: CELLTYPES.BOUNDARY},{x: 6, y: 11, type: CELLTYPES.BOUNDARY},{x: 7, y: 11, type: CELLTYPES.BOUNDARY},{x: 8, y: 11, type: CELLTYPES.BOUNDARY},{x: 9, y: 11, type: CELLTYPES.BOUNDARY},{x: 10, y: 11, type: CELLTYPES.BOUNDARY},{x: 11, y: 11, type: CELLTYPES.BOUNDARY},{x: 12, y: 11, type: CELLTYPES.BOUNDARY},{x: 13, y: 11, type: CELLTYPES.BOUNDARY},{x: 14, y: 11, type: CELLTYPES.BOUNDARY},{x: 15, y: 11, type: CELLTYPES.BOUNDARY},{x: 16, y: 11, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
+        //Easy password2
+        {x: 2, y: 10, type: CELLTYPES.EASY_PASSWORD2}
     ]
 
 ];
@@ -433,6 +444,11 @@ var MazeRunner = (function ($) {
             return prompt > 5 ? {expected: "BIG", prompt: prompt} : {expected : "SMALL", prompt: prompt};
         }
 
+        if(cell.type==CELLTYPES.EASY_PASSWORD2){
+            prompt = Math.floor(Math.random()*2) + 2;
+            return prompt > 1 ? {expected: "BIG", prompt: prompt} : {expected : "SMALL", prompt: prompt};
+        }
+
         return {expected: expected, prompt: prompt};
     }
 
@@ -582,6 +598,15 @@ var MazeRunner = (function ($) {
         },
         initLevel7: function () {
             doRunLevel(7);
+        },
+        initLevel8: function () {
+            doRunLevel(8);
+        },
+        initLevel9: function () {
+            doRunLevel(9);
+        },
+        initLevel10: function () {
+            doRunLevel(10);
         },
         CabbageMan: CabbageMan,
         actionList: actionList
