@@ -12,7 +12,7 @@
  *
  * -Should add wait() which makes the environment progress 1 tick.
  *
- * Functions the cabage man should implement:
+ * Functions the cabbage man should implement:
  * --Maybe some kind of getPassword thing that does some calculation.
  * --
  *
@@ -257,45 +257,293 @@ var LEVELS = [
     ],
     [
         //Row 1
-        {x: 1, y: 9, type: CELLTYPES.BOUNDARY},{x: 2, y: 9, type: CELLTYPES.BOUNDARY},{x: 3, y: 9, type: CELLTYPES.BOUNDARY},{x: 4, y: 9, type: CELLTYPES.BOUNDARY},{x: 5, y: 9, type: CELLTYPES.BOUNDARY},{x: 6, y: 9, type: CELLTYPES.BOUNDARY},{x: 7, y: 9, type: CELLTYPES.BOUNDARY},{x: 8, y: 9, type: CELLTYPES.BOUNDARY},{x: 9, y: 9, type: CELLTYPES.BOUNDARY},{x: 10, y: 9, type: CELLTYPES.BOUNDARY},{x: 11, y: 9, type: CELLTYPES.BOUNDARY},{x: 12, y: 9, type: CELLTYPES.BOUNDARY},{x: 13, y: 9, type: CELLTYPES.BOUNDARY},{x: 14, y: 9, type: CELLTYPES.BOUNDARY},{x: 15, y: 9, type: CELLTYPES.BOUNDARY},{x: 16, y: 9, type: CELLTYPES.BOUNDARY},{x: 17, y: 9, type: CELLTYPES.BOUNDARY},{x: 18, y: 9, type: CELLTYPES.BOUNDARY},
+        {x: 1, y: 9, type: CELLTYPES.BOUNDARY}, {x: 2, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 3,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 4, y: 9, type: CELLTYPES.BOUNDARY}, {x: 5, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 6,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 7, y: 9, type: CELLTYPES.BOUNDARY}, {x: 8, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 9,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 10, y: 9, type: CELLTYPES.BOUNDARY}, {x: 11, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 12,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 13, y: 9, type: CELLTYPES.BOUNDARY}, {x: 14, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 15,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 16, y: 9, type: CELLTYPES.BOUNDARY}, {x: 17, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 18,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    },
         //Row 2
-        {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 11, type: CELLTYPES.BOUNDARY},{x: 6, y: 11, type: CELLTYPES.BOUNDARY},{x: 7, y: 11, type: CELLTYPES.BOUNDARY},{x: 8, y: 11, type: CELLTYPES.BOUNDARY},{x: 9, y: 11, type: CELLTYPES.BOUNDARY},{x: 10, y: 11, type: CELLTYPES.BOUNDARY},{x: 11, y: 11, type: CELLTYPES.BOUNDARY},{x: 12, y: 11, type: CELLTYPES.BOUNDARY},{x: 13, y: 11, type: CELLTYPES.BOUNDARY},{x: 14, y: 11, type: CELLTYPES.BOUNDARY},{x: 15, y: 11, type: CELLTYPES.BOUNDARY},{x: 16, y: 11, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
+        {x: 1, y: 11, type: CELLTYPES.BOUNDARY}, {x: 2, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 3,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 4, y: 11, type: CELLTYPES.BOUNDARY}, {x: 5, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 6,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 7, y: 11, type: CELLTYPES.BOUNDARY}, {x: 8, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 9,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 10, y: 11, type: CELLTYPES.BOUNDARY}, {x: 11, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 12,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 13, y: 11, type: CELLTYPES.BOUNDARY}, {x: 14, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 15,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 16, y: 11, type: CELLTYPES.BOUNDARY}, {x: 17, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 18,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    },
         //Easy password
         {x: 2, y: 10, type: CELLTYPES.EASY_PASSWORD}
     ],
     [
         //Row 1
-        {x: 1, y: 9, type: CELLTYPES.BOUNDARY},{x: 2, y: 9, type: CELLTYPES.BOUNDARY},{x: 3, y: 9, type: CELLTYPES.BOUNDARY},{x: 4, y: 9, type: CELLTYPES.BOUNDARY},{x: 5, y: 9, type: CELLTYPES.BOUNDARY},{x: 6, y: 9, type: CELLTYPES.BOUNDARY},{x: 7, y: 9, type: CELLTYPES.BOUNDARY},{x: 8, y: 9, type: CELLTYPES.BOUNDARY},{x: 9, y: 9, type: CELLTYPES.BOUNDARY},{x: 10, y: 9, type: CELLTYPES.BOUNDARY},{x: 11, y: 9, type: CELLTYPES.BOUNDARY},{x: 12, y: 9, type: CELLTYPES.BOUNDARY},{x: 13, y: 9, type: CELLTYPES.BOUNDARY},{x: 14, y: 9, type: CELLTYPES.BOUNDARY},{x: 15, y: 9, type: CELLTYPES.BOUNDARY},{x: 16, y: 9, type: CELLTYPES.BOUNDARY},{x: 17, y: 9, type: CELLTYPES.BOUNDARY},{x: 18, y: 9, type: CELLTYPES.BOUNDARY},
+        {x: 1, y: 9, type: CELLTYPES.BOUNDARY}, {x: 2, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 3,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 4, y: 9, type: CELLTYPES.BOUNDARY}, {x: 5, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 6,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 7, y: 9, type: CELLTYPES.BOUNDARY}, {x: 8, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 9,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 10, y: 9, type: CELLTYPES.BOUNDARY}, {x: 11, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 12,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 13, y: 9, type: CELLTYPES.BOUNDARY}, {x: 14, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 15,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 16, y: 9, type: CELLTYPES.BOUNDARY}, {x: 17, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 18,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    },
         //Row 2
-        {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 11, type: CELLTYPES.BOUNDARY},{x: 6, y: 11, type: CELLTYPES.BOUNDARY},{x: 7, y: 11, type: CELLTYPES.BOUNDARY},{x: 8, y: 11, type: CELLTYPES.BOUNDARY},{x: 9, y: 11, type: CELLTYPES.BOUNDARY},{x: 10, y: 11, type: CELLTYPES.BOUNDARY},{x: 11, y: 11, type: CELLTYPES.BOUNDARY},{x: 12, y: 11, type: CELLTYPES.BOUNDARY},{x: 13, y: 11, type: CELLTYPES.BOUNDARY},{x: 14, y: 11, type: CELLTYPES.BOUNDARY},{x: 15, y: 11, type: CELLTYPES.BOUNDARY},{x: 16, y: 11, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
+        {x: 1, y: 11, type: CELLTYPES.BOUNDARY}, {x: 2, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 3,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 4, y: 11, type: CELLTYPES.BOUNDARY}, {x: 5, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 6,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 7, y: 11, type: CELLTYPES.BOUNDARY}, {x: 8, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 9,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 10, y: 11, type: CELLTYPES.BOUNDARY}, {x: 11, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 12,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 13, y: 11, type: CELLTYPES.BOUNDARY}, {x: 14, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 15,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 16, y: 11, type: CELLTYPES.BOUNDARY}, {x: 17, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 18,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    },
         //Easy password2
         {x: 2, y: 10, type: CELLTYPES.EASY_PASSWORD2}
     ],
     [
         //Row 1
-        {x: 1, y: 9, type: CELLTYPES.BOUNDARY},{x: 2, y: 9, type: CELLTYPES.BOUNDARY},{x: 3, y: 9, type: CELLTYPES.BOUNDARY},{x: 4, y: 9, type: CELLTYPES.BOUNDARY},{x: 5, y: 9, type: CELLTYPES.BOUNDARY},{x: 6, y: 9, type: CELLTYPES.BOUNDARY},{x: 7, y: 9, type: CELLTYPES.BOUNDARY},{x: 8, y: 9, type: CELLTYPES.BOUNDARY},{x: 9, y: 9, type: CELLTYPES.BOUNDARY},{x: 10, y: 9, type: CELLTYPES.BOUNDARY},{x: 11, y: 9, type: CELLTYPES.BOUNDARY},{x: 12, y: 9, type: CELLTYPES.BOUNDARY},{x: 13, y: 9, type: CELLTYPES.BOUNDARY},{x: 14, y: 9, type: CELLTYPES.BOUNDARY},{x: 15, y: 9, type: CELLTYPES.BOUNDARY},{x: 16, y: 9, type: CELLTYPES.BOUNDARY},{x: 17, y: 9, type: CELLTYPES.BOUNDARY},{x: 18, y: 9, type: CELLTYPES.BOUNDARY},
+        {x: 1, y: 9, type: CELLTYPES.BOUNDARY}, {x: 2, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 3,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 4, y: 9, type: CELLTYPES.BOUNDARY}, {x: 5, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 6,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 7, y: 9, type: CELLTYPES.BOUNDARY}, {x: 8, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 9,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 10, y: 9, type: CELLTYPES.BOUNDARY}, {x: 11, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 12,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 13, y: 9, type: CELLTYPES.BOUNDARY}, {x: 14, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 15,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 16, y: 9, type: CELLTYPES.BOUNDARY}, {x: 17, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 18,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    },
         //Row 2
-        {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 11, type: CELLTYPES.BOUNDARY},{x: 6, y: 11, type: CELLTYPES.BOUNDARY},{x: 7, y: 11, type: CELLTYPES.BOUNDARY},{x: 8, y: 11, type: CELLTYPES.BOUNDARY},{x: 9, y: 11, type: CELLTYPES.BOUNDARY},{x: 10, y: 11, type: CELLTYPES.BOUNDARY},{x: 11, y: 11, type: CELLTYPES.BOUNDARY},{x: 12, y: 11, type: CELLTYPES.BOUNDARY},{x: 13, y: 11, type: CELLTYPES.BOUNDARY},{x: 14, y: 11, type: CELLTYPES.BOUNDARY},{x: 15, y: 11, type: CELLTYPES.BOUNDARY},{x: 16, y: 11, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
+        {x: 1, y: 11, type: CELLTYPES.BOUNDARY}, {x: 2, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 3,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 4, y: 11, type: CELLTYPES.BOUNDARY}, {x: 5, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 6,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 7, y: 11, type: CELLTYPES.BOUNDARY}, {x: 8, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 9,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 10, y: 11, type: CELLTYPES.BOUNDARY}, {x: 11, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 12,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 13, y: 11, type: CELLTYPES.BOUNDARY}, {x: 14, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 15,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 16, y: 11, type: CELLTYPES.BOUNDARY}, {x: 17, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 18,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    },
         //Easy password2
         {x: 2, y: 10, type: CELLTYPES.EASY_PASSWORD2}, {x: 4, y: 10, type: CELLTYPES.EASY_PASSWORD2}
     ],
     [
         //Row 1
-        {x: 1, y: 9, type: CELLTYPES.BOUNDARY},{x: 2, y: 9, type: CELLTYPES.BOUNDARY},{x: 3, y: 9, type: CELLTYPES.BOUNDARY},{x: 4, y: 7, type: CELLTYPES.BOUNDARY},{x: 5, y: 7, type: CELLTYPES.BOUNDARY},{x: 6, y: 7, type: CELLTYPES.BOUNDARY},{x: 7, y: 7, type: CELLTYPES.BOUNDARY},{x: 8, y: 7, type: CELLTYPES.BOUNDARY},{x: 9, y: 7, type: CELLTYPES.BOUNDARY},{x: 10, y: 7, type: CELLTYPES.BOUNDARY},{x: 11, y: 7, type: CELLTYPES.BOUNDARY},{x: 12, y: 7, type: CELLTYPES.BOUNDARY},{x: 13, y: 7, type: CELLTYPES.BOUNDARY},{x: 14, y: 7, type: CELLTYPES.BOUNDARY},{x: 15, y: 7, type: CELLTYPES.BOUNDARY},{x: 16, y: 7, type: CELLTYPES.BOUNDARY},{x: 17, y: 7, type: CELLTYPES.BOUNDARY},{x: 18, y: 7, type: CELLTYPES.BOUNDARY},
-        {x: 3, y:8, type: CELLTYPES.BOUNDARY},{x: 3, y:7, type: CELLTYPES.BOUNDARY},
+        {x: 1, y: 9, type: CELLTYPES.BOUNDARY}, {x: 2, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 3,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 4, y: 7, type: CELLTYPES.BOUNDARY}, {x: 5, y: 7, type: CELLTYPES.BOUNDARY}, {
+        x: 6,
+        y: 7,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 7, y: 7, type: CELLTYPES.BOUNDARY}, {x: 8, y: 7, type: CELLTYPES.BOUNDARY}, {
+        x: 9,
+        y: 7,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 10, y: 7, type: CELLTYPES.BOUNDARY}, {x: 11, y: 7, type: CELLTYPES.BOUNDARY}, {
+        x: 12,
+        y: 7,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 13, y: 7, type: CELLTYPES.BOUNDARY}, {x: 14, y: 7, type: CELLTYPES.BOUNDARY}, {
+        x: 15,
+        y: 7,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 16, y: 7, type: CELLTYPES.BOUNDARY}, {x: 17, y: 7, type: CELLTYPES.BOUNDARY}, {
+        x: 18,
+        y: 7,
+        type: CELLTYPES.BOUNDARY
+    },
+        {x: 3, y: 8, type: CELLTYPES.BOUNDARY}, {x: 3, y: 7, type: CELLTYPES.BOUNDARY},
         //Row 2
-        {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 9, type: CELLTYPES.BOUNDARY},{x: 6, y: 9, type: CELLTYPES.BOUNDARY},{x: 7, y: 9, type: CELLTYPES.BOUNDARY},{x: 8, y: 9, type: CELLTYPES.BOUNDARY},{x: 9, y: 9, type: CELLTYPES.BOUNDARY},{x: 10, y: 9, type: CELLTYPES.BOUNDARY},{x: 11, y: 9, type: CELLTYPES.BOUNDARY},{x: 12, y: 9, type: CELLTYPES.BOUNDARY},{x: 13, y: 9, type: CELLTYPES.BOUNDARY},{x: 14, y: 9, type: CELLTYPES.BOUNDARY},{x: 15, y: 9, type: CELLTYPES.BOUNDARY},{x: 16, y: 9, type: CELLTYPES.BOUNDARY},{x: 17, y: 9, type: CELLTYPES.BOUNDARY},
-        {x: 5, y:11, type: CELLTYPES.BOUNDARY},{x: 5, y:10, type: CELLTYPES.BOUNDARY}, {x: 17, y: 10, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
+        {x: 1, y: 11, type: CELLTYPES.BOUNDARY}, {x: 2, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 3,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 4, y: 11, type: CELLTYPES.BOUNDARY}, {x: 5, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 6,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 7, y: 9, type: CELLTYPES.BOUNDARY}, {x: 8, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 9,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 10, y: 9, type: CELLTYPES.BOUNDARY}, {x: 11, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 12,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 13, y: 9, type: CELLTYPES.BOUNDARY}, {x: 14, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 15,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 16, y: 9, type: CELLTYPES.BOUNDARY}, {x: 17, y: 9, type: CELLTYPES.BOUNDARY},
+        {x: 5, y: 11, type: CELLTYPES.BOUNDARY}, {x: 5, y: 10, type: CELLTYPES.BOUNDARY}, {
+        x: 17,
+        y: 10,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 17, y: 11, type: CELLTYPES.BOUNDARY}, {x: 18, y: 11, type: CELLTYPES.BOUNDARY},
         //Easy password2
-        {x: 4, y: 9, type: CELLTYPES.EASY_PASSWORD2},{x: 18, y: 9, type: CELLTYPES.EASY_PASSWORD2}
+        {x: 4, y: 9, type: CELLTYPES.EASY_PASSWORD2}, {x: 18, y: 9, type: CELLTYPES.EASY_PASSWORD2}
     ],
     [
         //Offshoots
-        {x: 4, y: 8, type: CELLTYPES.BOUNDARY},{x: 4, y: 7, type: CELLTYPES.BOUNDARY},{x: 4, y: 6, type: CELLTYPES.BOUNDARY},{x: 4, y: 5, type: CELLTYPES.BOUNDARY},{x: 5, y: 5, type: CELLTYPES.BOUNDARY},{x: 6, y: 5, type: CELLTYPES.BOUNDARY},{x: 6, y: 6, type: CELLTYPES.BOUNDARY},{x: 6, y: 7, type: CELLTYPES.BOUNDARY},{x: 6, y: 8, type: CELLTYPES.BOUNDARY},
+        {x: 4, y: 8, type: CELLTYPES.BOUNDARY}, {x: 4, y: 7, type: CELLTYPES.BOUNDARY}, {
+        x: 4,
+        y: 6,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 4, y: 5, type: CELLTYPES.BOUNDARY}, {x: 5, y: 5, type: CELLTYPES.BOUNDARY}, {
+        x: 6,
+        y: 5,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 6, y: 6, type: CELLTYPES.BOUNDARY}, {x: 6, y: 7, type: CELLTYPES.BOUNDARY}, {
+        x: 6,
+        y: 8,
+        type: CELLTYPES.BOUNDARY
+    },
         //Row 1
-        {x: 1, y: 9, type: CELLTYPES.BOUNDARY},{x: 2, y: 9, type: CELLTYPES.BOUNDARY},{x: 3, y: 9, type: CELLTYPES.BOUNDARY},{x: 4, y: 9, type: CELLTYPES.BOUNDARY},{x: 6, y: 9, type: CELLTYPES.BOUNDARY},{x: 7, y: 9, type: CELLTYPES.BOUNDARY},{x: 8, y: 9, type: CELLTYPES.BOUNDARY},{x: 9, y: 9, type: CELLTYPES.BOUNDARY},{x: 10, y: 9, type: CELLTYPES.BOUNDARY},{x: 11, y: 9, type: CELLTYPES.BOUNDARY},{x: 12, y: 9, type: CELLTYPES.BOUNDARY},{x: 13, y: 9, type: CELLTYPES.BOUNDARY},{x: 14, y: 9, type: CELLTYPES.BOUNDARY},{x: 15, y: 9, type: CELLTYPES.BOUNDARY},{x: 16, y: 9, type: CELLTYPES.BOUNDARY},{x: 17, y: 9, type: CELLTYPES.BOUNDARY},{x: 18, y: 9, type: CELLTYPES.BOUNDARY},
+        {x: 1, y: 9, type: CELLTYPES.BOUNDARY}, {x: 2, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 3,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 4, y: 9, type: CELLTYPES.BOUNDARY}, {x: 6, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 7,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 8, y: 9, type: CELLTYPES.BOUNDARY}, {x: 9, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 10,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 11, y: 9, type: CELLTYPES.BOUNDARY}, {x: 12, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 13,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 14, y: 9, type: CELLTYPES.BOUNDARY}, {x: 15, y: 9, type: CELLTYPES.BOUNDARY}, {
+        x: 16,
+        y: 9,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 17, y: 9, type: CELLTYPES.BOUNDARY}, {x: 18, y: 9, type: CELLTYPES.BOUNDARY},
         //Row 2
-        {x: 1, y: 11, type: CELLTYPES.BOUNDARY},{x: 2, y: 11, type: CELLTYPES.BOUNDARY},{x: 3, y: 11, type: CELLTYPES.BOUNDARY},{x: 4, y: 11, type: CELLTYPES.BOUNDARY},{x: 5, y: 11, type: CELLTYPES.BOUNDARY},{x: 6, y: 11, type: CELLTYPES.BOUNDARY},{x: 7, y: 11, type: CELLTYPES.BOUNDARY},{x: 8, y: 11, type: CELLTYPES.BOUNDARY},{x: 9, y: 11, type: CELLTYPES.BOUNDARY},{x: 10, y: 11, type: CELLTYPES.BOUNDARY},{x: 11, y: 11, type: CELLTYPES.BOUNDARY},{x: 12, y: 11, type: CELLTYPES.BOUNDARY},{x: 13, y: 11, type: CELLTYPES.BOUNDARY},{x: 14, y: 11, type: CELLTYPES.BOUNDARY},{x: 15, y: 11, type: CELLTYPES.BOUNDARY},{x: 16, y: 11, type: CELLTYPES.BOUNDARY},{x: 17, y: 11, type: CELLTYPES.BOUNDARY},{x: 18, y: 11, type: CELLTYPES.BOUNDARY},
+        {x: 1, y: 11, type: CELLTYPES.BOUNDARY}, {x: 2, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 3,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 4, y: 11, type: CELLTYPES.BOUNDARY}, {x: 5, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 6,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 7, y: 11, type: CELLTYPES.BOUNDARY}, {x: 8, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 9,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 10, y: 11, type: CELLTYPES.BOUNDARY}, {x: 11, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 12,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 13, y: 11, type: CELLTYPES.BOUNDARY}, {x: 14, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 15,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    }, {x: 16, y: 11, type: CELLTYPES.BOUNDARY}, {x: 17, y: 11, type: CELLTYPES.BOUNDARY}, {
+        x: 18,
+        y: 11,
+        type: CELLTYPES.BOUNDARY
+    },
         //Easy password2
         {x: 2, y: 10, type: CELLTYPES.EASY_PASSWORD3}, {x: 4, y: 10, type: CELLTYPES.EASY_PASSWORD3}
     ],
@@ -318,6 +566,18 @@ var MazeRunner = (function ($) {
         getLevelDiv().append('<div id="maze"></div>')
     }
 
+    var idSalt = 1000000000;
+    function showSpeech(prompt, text, x, y){
+        idSalt++;
+        var html = '<div id="' + idSalt + '" class="speech"><div class="prompt">' + prompt + '</div><div class="floatLeft">--&gt</div><div class="speech-text">' + text + '</div></div>';
+        $("#maze").append($(html).css("left", (x*50 - 10) + "px").css("top", (y*50 -10) + "px"));
+        window.setTimeout((function(salt){
+/*            $("#" + salt).fadeOut(1000, function(){
+                $("#" + salt).remove();
+            });*/
+        }).bind(this, idSalt), 1000);
+    }
+
     function createCellDiv(cell) {
         var idString = cell.x + "_" + cell.y;
         getMazeDiv().append('<div id="' + idString + '" class="box ' + cell.type + '"></div>');
@@ -328,7 +588,7 @@ var MazeRunner = (function ($) {
         $(idString).removeClass(cell.type).addClass(CELLTYPES.OPEN);
     }
 
-    function renderPrompt(cell){
+    function renderPrompt(cell) {
         var idString = "#" + cell.x + "_" + cell.y;
         $(idString).html(cell.prompt.prompt);
     }
@@ -377,11 +637,11 @@ var MazeRunner = (function ($) {
         }
     }
 
-    function assignPrompts(){
-        for(var x = 0; x < 20; x++){
-            for(var y = 0; y < 20; y++){
+    function assignPrompts() {
+        for (var x = 0; x < 20; x++) {
+            for (var y = 0; y < 20; y++) {
                 var cell = maze[x][y];
-                if(cell.type.indexOf("password") > -1){
+                if (cell.type.indexOf("password") > -1) {
                     cell.prompt = createPasswordPrompt(x, y);
                     renderPrompt(cell);
                 }
@@ -390,17 +650,21 @@ var MazeRunner = (function ($) {
     }
 
     function doWin() {
-        playerWon = true;
-        if (window.confirm("You won. Do you want to go to the next level?")) {
-            level = level + 1;
-            window.location.href = "../level" + level + "/level" + level + ".html"
-        }
+        window.setTimeout(function () {
+            playerWon = true;
+            if (window.confirm("You won. Do you want to go to the next level?")) {
+                level = level + 1;
+                window.location.href = "../level" + level + "/level" + level + ".html"
+            }
+        }, 100);
     }
 
     function doLose(msg) {
-        playerLost = true;
-        alert(msg);
-        actionList.clear();
+        window.setTimeout(function () {
+            playerLost = true;
+            alert(msg);
+            actionList.clear();
+        }, 100);
     }
 
     var level;
@@ -468,28 +732,27 @@ var MazeRunner = (function ($) {
         var expected = "";
         var prompt = "";
 
-        if(cell.type==CELLTYPES.EASY_PASSWORD){
-            prompt = Math.floor(Math.random()*10);
-            return prompt > 5 ? {expected: "BIG", prompt: prompt} : {expected : "SMALL", prompt: prompt};
+        if (cell.type == CELLTYPES.EASY_PASSWORD) {
+            prompt = Math.floor(Math.random() * 10);
+            return prompt > 5 ? {expected: "BIG", prompt: prompt} : {expected: "SMALL", prompt: prompt};
         }
 
-        if(cell.type==CELLTYPES.EASY_PASSWORD2){
-            prompt = Math.floor(Math.random()*2) + 2;
-            return prompt > 1 ? {expected: "BIG", prompt: prompt} : {expected : "SMALL", prompt: prompt};
+        if (cell.type == CELLTYPES.EASY_PASSWORD2) {
+            prompt = Math.floor(Math.random() * 2) + 2;
+            return prompt > 1 ? {expected: "BIG", prompt: prompt} : {expected: "SMALL", prompt: prompt};
         }
 
-        if(cell.type==CELLTYPES.EASY_PASSWORD3){
-            prompt = Math.floor(Math.random()*10);
-            return {expected : (prompt * 2) + 1, prompt: prompt};
+        if (cell.type == CELLTYPES.EASY_PASSWORD3) {
+            prompt = Math.floor(Math.random() * 10);
+            return {expected: (prompt * 2) + 1, prompt: prompt};
         }
 
         return {expected: expected, prompt: prompt};
     }
 
-    function doTick(){
+    function doTick() {
         assignPrompts();
     }
-
 
 
     function CabbageMan() {
@@ -586,18 +849,19 @@ var MazeRunner = (function ($) {
                 }
                 var prompt = maze[x][y].prompt;
 
-                if(typeof fn != "function"){
+                if (typeof fn != "function") {
                     doLose("Your decide function wasn't a function. Instead it was " + fn);
                     return;
                 }
 
 
-                if(maze[x][y].type.indexOf("password") ==-1){
+                if (maze[x][y].type.indexOf("password") == -1) {
                     doLose("You tried to say a password, but cabbage man isn't at a password block");
                     return;
                 }
 
                 var userAnswer = fn(prompt.prompt);
+                showSpeech(prompt.prompt, userAnswer, self._x, self._y);
                 if (prompt.expected === userAnswer) {
                     makeOpen(maze[x][y]);
                     maze[x][y].type = CELLTYPES.OPEN;
@@ -611,6 +875,7 @@ var MazeRunner = (function ($) {
 
     return {
         initLevel1: function () {
+            MazeRunner.actionList.acceptingSubmissions = true;
             doRunLevel(1);
         },
         initLevel2: function () {

@@ -20,6 +20,29 @@ li {
     height: 1000px;
     border: 1px solid black;
     margin: 0 auto;
+    position: absolute;
+}
+
+.speech {
+    position: absolute;
+    z-index: 99;
+    padding: 5px;
+    font-size: 200%;
+
+}
+
+.speech-text{
+    float: left;
+    background-color: rgba(1,255,1,.5);
+}
+
+.prompt {
+    float: left;
+    background-color: rgba(0, 255, 255, .5);
+}
+
+.floatLeft {
+    float:left;
 }
 
 .box {
