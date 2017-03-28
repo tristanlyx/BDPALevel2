@@ -547,7 +547,12 @@ var LEVELS = [
         //Easy password2
         {x: 2, y: 10, type: CELLTYPES.EASY_PASSWORD3}, {x: 4, y: 10, type: CELLTYPES.EASY_PASSWORD3}
     ],
+    [
+        {x:1, y:9, type:CELLTYPES.BOUNDARY},{x:1, y:11, type:CELLTYPES.BOUNDARY},{x:2, y:11, type:CELLTYPES.BOUNDARY},{x:3, y:11, type:CELLTYPES.BOUNDARY},{x:3, y:10, type:CELLTYPES.BOUNDARY},{x:3, y:9, type:CELLTYPES.BOUNDARY},{x:1, y:7, type:CELLTYPES.BOUNDARY},{x:2, y:7, type:CELLTYPES.BOUNDARY},{x:3, y:7, type:CELLTYPES.BOUNDARY},{x:4, y:7, type:CELLTYPES.BOUNDARY},{x:6, y:7, type:CELLTYPES.BOUNDARY},{x:6, y:6, type:CELLTYPES.BOUNDARY},{x:6, y:5, type:CELLTYPES.BOUNDARY},{x:6, y:4, type:CELLTYPES.BOUNDARY},{x:6, y:3, type:CELLTYPES.BOUNDARY},{x:6, y:2, type:CELLTYPES.BOUNDARY},{x:6, y:1, type:CELLTYPES.BOUNDARY},{x:5, y:5, type:CELLTYPES.BOUNDARY},{x:4, y:5, type:CELLTYPES.BOUNDARY},{x:3, y:4, type:CELLTYPES.BOUNDARY},{x:2, y:3, type:CELLTYPES.BOUNDARY},{x:1, y:6, type:CELLTYPES.BOUNDARY},{x:2, y:5, type:CELLTYPES.BOUNDARY},{x:4, y:1, type:CELLTYPES.BOUNDARY},{x:5, y:9, type:CELLTYPES.BOUNDARY},{x:5, y:10, type:CELLTYPES.BOUNDARY},{x:5, y:11, type:CELLTYPES.BOUNDARY},{x:5, y:13, type:CELLTYPES.BOUNDARY},{x:5, y:12, type:CELLTYPES.BOUNDARY},{x:4, y:13, type:CELLTYPES.BOUNDARY},{x:3, y:13, type:CELLTYPES.BOUNDARY},{x:2, y:13, type:CELLTYPES.BOUNDARY},{x:1, y:13, type:CELLTYPES.BOUNDARY},{x:6, y:9, type:CELLTYPES.BOUNDARY},{x:7, y:9, type:CELLTYPES.BOUNDARY},{x:7, y:4, type:CELLTYPES.BOUNDARY},{x:8, y:4, type:CELLTYPES.BOUNDARY},{x:8, y:5, type:CELLTYPES.BOUNDARY},{x:14, y:7, type:CELLTYPES.BOUNDARY},{x:18, y:11, type:CELLTYPES.BOUNDARY},{x:17, y:11, type:CELLTYPES.BOUNDARY},{x:16, y:11, type:CELLTYPES.BOUNDARY},{x:15, y:11, type:CELLTYPES.BOUNDARY},{x:15, y:12, type:CELLTYPES.BOUNDARY},{x:15, y:13, type:CELLTYPES.BOUNDARY},{x:16, y:13, type:CELLTYPES.BOUNDARY},{x:17, y:13, type:CELLTYPES.BOUNDARY},{x:15, y:15, type:CELLTYPES.BOUNDARY},{x:16, y:15, type:CELLTYPES.BOUNDARY},{x:17, y:15, type:CELLTYPES.BOUNDARY},{x:12, y:10, type:CELLTYPES.BOUNDARY},{x:13, y:11, type:CELLTYPES.BOUNDARY},{x:14, y:12, type:CELLTYPES.BOUNDARY},{x:10, y:14, type:CELLTYPES.BOUNDARY},{x:11, y:15, type:CELLTYPES.BOUNDARY},{x:11, y:14, type:CELLTYPES.BOUNDARY},{x:10, y:15, type:CELLTYPES.BOUNDARY},{x:12, y:14, type:CELLTYPES.BOUNDARY},{x:12, y:13, type:CELLTYPES.BOUNDARY},{x:13, y:14, type:CELLTYPES.BOUNDARY},{x:18, y:8, type:CELLTYPES.BOUNDARY},{x:17, y:7, type:CELLTYPES.BOUNDARY},{x:16, y:6, type:CELLTYPES.BOUNDARY},{x:18, y:6, type:CELLTYPES.BOUNDARY},{x:16, y:8, type:CELLTYPES.BOUNDARY},{x:17, y:5, type:CELLTYPES.BOUNDARY},{x:16, y:4, type:CELLTYPES.BOUNDARY},{x:18, y:3, type:CELLTYPES.BOUNDARY},{x:17, y:2, type:CELLTYPES.BOUNDARY},{x:16, y:3, type:CELLTYPES.BOUNDARY},{x:14, y:6, type:CELLTYPES.BOUNDARY},{x:15, y:5, type:CELLTYPES.BOUNDARY},{x:15, y:1, type:CELLTYPES.BOUNDARY},{x:9, y:5, type:CELLTYPES.BOUNDARY},
+        {x:8, y:9, type:CELLTYPES.BOUNDARY},{x:9, y:9, type:CELLTYPES.BOUNDARY},{x:10, y:9, type:CELLTYPES.BOUNDARY},{x:11, y:11, type:CELLTYPES.BOUNDARY},{x:10, y:12, type:CELLTYPES.BOUNDARY},{x:9, y:12, type:CELLTYPES.BOUNDARY},{x:7, y:12, type:CELLTYPES.BOUNDARY},{x:7, y:12, type:CELLTYPES.BOUNDARY},{x:8, y:12, type:CELLTYPES.BOUNDARY},{x:2, y:16, type:CELLTYPES.BOUNDARY},{x:3, y:16, type:CELLTYPES.BOUNDARY},{x:4, y:16, type:CELLTYPES.BOUNDARY},{x:5, y:16, type:CELLTYPES.BOUNDARY},{x:6, y:16, type:CELLTYPES.BOUNDARY},{x:7, y:16, type:CELLTYPES.BOUNDARY},{x:7, y:17, type:CELLTYPES.BOUNDARY},{x:6, y:17, type:CELLTYPES.BOUNDARY},{x:5, y:17, type:CELLTYPES.BOUNDARY},{x:4, y:17, type:CELLTYPES.BOUNDARY},{x:2, y:17, type:CELLTYPES.BOUNDARY},{x:3, y:17, type:CELLTYPES.BOUNDARY},{x:12, y:11, type:CELLTYPES.BOUNDARY},{x:17, y:9, type:CELLTYPES.BOUNDARY},{x:16, y:9, type:CELLTYPES.BOUNDARY},{x:18, y:9, type:CELLTYPES.BOUNDARY},{x:15, y:9, type:CELLTYPES.BOUNDARY},{x:14, y:9, type:CELLTYPES.BOUNDARY},{x:14, y:8, type:CELLTYPES.BOUNDARY},{x:7, y:7, type:CELLTYPES.BOUNDARY},{x:9, y:7, type:CELLTYPES.BOUNDARY},{x:10, y:7, type:CELLTYPES.BOUNDARY},{x:11, y:7, type:CELLTYPES.BOUNDARY},{x:11, y:6, type:CELLTYPES.BOUNDARY},{x:11, y:5, type:CELLTYPES.BOUNDARY},{x:11, y:4, type:CELLTYPES.BOUNDARY},{x:10, y:3, type:CELLTYPES.BOUNDARY},{x:9, y:2, type:CELLTYPES.BOUNDARY},{x:8, y:2, type:CELLTYPES.BOUNDARY},{x:11, y:2, type:CELLTYPES.BOUNDARY},{x:12, y:2, type:CELLTYPES.BOUNDARY},{x:13, y:2, type:CELLTYPES.BOUNDARY},{x:13, y:3, type:CELLTYPES.BOUNDARY},{x:14, y:4, type:CELLTYPES.BOUNDARY},{x:13, y:6, type:CELLTYPES.BOUNDARY},{x:14, y:5, type:CELLTYPES.BOUNDARY},{x:13, y:5, type:CELLTYPES.BOUNDARY},{x:9, y:10, type:CELLTYPES.BOUNDARY},{x:7, y:11, type:CELLTYPES.BOUNDARY},{x:8, y:13, type:CELLTYPES.BOUNDARY},{x:8, y:14, type:CELLTYPES.BOUNDARY},{x:6, y:15, type:CELLTYPES.BOUNDARY},{x:4, y:14, type:CELLTYPES.BOUNDARY},{x:2, y:15, type:CELLTYPES.BOUNDARY},{x:8, y:17, type:CELLTYPES.BOUNDARY},{x:10, y:17, type:CELLTYPES.BOUNDARY},{x:11, y:17, type:CELLTYPES.BOUNDARY},{x:12, y:17, type:CELLTYPES.BOUNDARY},{x:13, y:17, type:CELLTYPES.BOUNDARY},{x:13, y:16, type:CELLTYPES.BOUNDARY},{x:15, y:17, type:CELLTYPES.BOUNDARY},{x:16, y:17, type:CELLTYPES.BOUNDARY},{x:16, y:18, type:CELLTYPES.BOUNDARY},{x:15, y:18, type:CELLTYPES.BOUNDARY},{x:18, y:17, type:CELLTYPES.BOUNDARY},{x:12, y:8, type:CELLTYPES.BOUNDARY},
 
+    ],
+    []
 ];
 
 var playerWon = false;
@@ -567,14 +572,15 @@ var MazeRunner = (function ($) {
     }
 
     var idSalt = 1000000000;
-    function showSpeech(prompt, text, x, y){
+
+    function showSpeech(prompt, text, x, y) {
         idSalt++;
         var html = '<div id="' + idSalt + '" class="speech"><div class="prompt">' + prompt + '</div><div class="floatLeft">--&gt</div><div class="speech-text">' + text + '</div></div>';
-        $("#maze").append($(html).css("left", (x*50 - 10) + "px").css("top", (y*50 -10) + "px"));
-        window.setTimeout((function(salt){
-/*            $("#" + salt).fadeOut(1000, function(){
-                $("#" + salt).remove();
-            });*/
+        $("#maze").append($(html).css("left", (x * 50 - 10) + "px").css("top", (y * 50 - 10) + "px"));
+        window.setTimeout((function (salt) {
+            /*            $("#" + salt).fadeOut(1000, function(){
+             $("#" + salt).remove();
+             });*/
         }).bind(this, idSalt), 1000);
     }
 
@@ -905,6 +911,36 @@ var MazeRunner = (function ($) {
         initLevel10: function () {
             doRunLevel(10);
         },
+        initLevel11: function () {
+            doRunLevel(11);
+        },
+        initLevel12: function () {
+            doRunLevel(12);
+        },
+        initLevel13: function () {
+            doRunLevel(13);
+        },
+        initLevel14: function () {
+            doRunLevel(14);
+        },
+        initLevel15: function () {
+            doRunLevel(15);
+        },
+        initLevel16: function () {
+            doRunLevel(16);
+        },
+        initLevel17: function () {
+            doRunLevel(17);
+        },
+        initLevel18: function () {
+            doRunLevel(18);
+        },
+        initLevel19: function () {
+            doRunLevel(19);
+        },
+        initLEvel20: function () {
+            doRunLevel(20);
+        },
         CabbageMan: CabbageMan,
         actionList: actionList
     };
@@ -917,4 +953,24 @@ var davidSkipLevel1 = function () {
     for (var i = 0; i < 19; i++) {
         cabbage.moveRight();
     }
+};
+
+var buildList = [];
+var enableLevelBuilding = function(){
+    $(".box").each(function(){
+        $(this).click(function(){
+            var id = this.id.split("_");
+            buildList.push({x: id[0], y:id[1], type: CELLTYPES.BOUNDARY});
+            $("#" + this.id).addClass(CELLTYPES.BOUNDARY);
+        });
+    });
+};
+
+var stringifyLevel = function(){
+    var result = '';
+    for(var i = 0; i< buildList.length; i++){
+        var cell = buildList[i];
+        result += "{x:" + cell.x + ", y:" + cell.y + ", type:CELLTYPES.BOUNDARY},";
+    }
+    return result;
 };
