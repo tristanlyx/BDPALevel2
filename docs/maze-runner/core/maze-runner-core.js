@@ -41,7 +41,8 @@ var CELLTYPES = {
     EASY_PASSWORD: "easy-password",
     EASY_PASSWORD2: "easy-password-2",
     EASY_PASSWORD3: "easy-password-3",
-    EASY_PASSWORD4: "easy-password-4"
+    EASY_PASSWORD4: "easy-password-4",
+    EASY_PASSWORD5: "easy-password-5"
 };
 
 var LEVELS = [
@@ -563,6 +564,9 @@ var LEVELS = [
         {x:2, y:8, type:CELLTYPES.EASY_PASSWORD4},{x:4, y:8, type:CELLTYPES.EASY_PASSWORD4},{x:8, y:8, type:CELLTYPES.EASY_PASSWORD4},{x:11, y:9, type:CELLTYPES.EASY_PASSWORD4},{x:14, y:10, type:CELLTYPES.EASY_PASSWORD4}
 
     ],
+    [
+        {x:18, y:1, type:CELLTYPES.BOUNDARY},{x:17, y:2, type:CELLTYPES.BOUNDARY},{x:17, y:3, type:CELLTYPES.BOUNDARY},{x:16, y:3, type:CELLTYPES.BOUNDARY},{x:15, y:4, type:CELLTYPES.BOUNDARY},{x:16, y:4, type:CELLTYPES.BOUNDARY},{x:15, y:5, type:CELLTYPES.BOUNDARY},{x:14, y:5, type:CELLTYPES.BOUNDARY},{x:14, y:6, type:CELLTYPES.BOUNDARY},{x:13, y:5, type:CELLTYPES.BOUNDARY},{x:12, y:5, type:CELLTYPES.BOUNDARY},{x:12, y:4, type:CELLTYPES.BOUNDARY},{x:12, y:3, type:CELLTYPES.BOUNDARY},{x:13, y:3, type:CELLTYPES.BOUNDARY},{x:13, y:2, type:CELLTYPES.BOUNDARY},{x:12, y:1, type:CELLTYPES.BOUNDARY},{x:11, y:1, type:CELLTYPES.BOUNDARY},{x:10, y:2, type:CELLTYPES.BOUNDARY},{x:9, y:2, type:CELLTYPES.BOUNDARY},{x:9, y:3, type:CELLTYPES.BOUNDARY},{x:8, y:4, type:CELLTYPES.BOUNDARY},{x:8, y:5, type:CELLTYPES.BOUNDARY},{x:9, y:6, type:CELLTYPES.BOUNDARY},{x:9, y:5, type:CELLTYPES.BOUNDARY},{x:9, y:6, type:CELLTYPES.BOUNDARY},{x:10, y:7, type:CELLTYPES.BOUNDARY},{x:10, y:7, type:CELLTYPES.BOUNDARY},{x:12, y:2, type:CELLTYPES.BOUNDARY},{x:11, y:7, type:CELLTYPES.BOUNDARY},{x:10, y:6, type:CELLTYPES.BOUNDARY},{x:11, y:8, type:CELLTYPES.BOUNDARY},{x:12, y:8, type:CELLTYPES.BOUNDARY},{x:12, y:9, type:CELLTYPES.BOUNDARY},{x:12, y:10, type:CELLTYPES.BOUNDARY},{x:11, y:10, type:CELLTYPES.BOUNDARY},{x:10, y:10, type:CELLTYPES.BOUNDARY},{x:9, y:10, type:CELLTYPES.BOUNDARY},{x:9, y:11, type:CELLTYPES.BOUNDARY},{x:10, y:11, type:CELLTYPES.BOUNDARY},{x:8, y:9, type:CELLTYPES.BOUNDARY},{x:8, y:10, type:CELLTYPES.BOUNDARY},{x:7, y:8, type:CELLTYPES.BOUNDARY},{x:7, y:9, type:CELLTYPES.BOUNDARY},{x:7, y:9, type:CELLTYPES.BOUNDARY},{x:6, y:7, type:CELLTYPES.BOUNDARY},{x:7, y:7, type:CELLTYPES.BOUNDARY},{x:5, y:6, type:CELLTYPES.BOUNDARY},{x:5, y:7, type:CELLTYPES.BOUNDARY},{x:4, y:7, type:CELLTYPES.BOUNDARY},{x:4, y:7, type:CELLTYPES.BOUNDARY},{x:4, y:8, type:CELLTYPES.BOUNDARY},{x:3, y:8, type:CELLTYPES.BOUNDARY},{x:3, y:9, type:CELLTYPES.BOUNDARY},{x:4, y:9, type:CELLTYPES.BOUNDARY},{x:4, y:10, type:CELLTYPES.BOUNDARY},{x:4, y:11, type:CELLTYPES.BOUNDARY},{x:4, y:11, type:CELLTYPES.BOUNDARY},{x:5, y:11, type:CELLTYPES.BOUNDARY},{x:5, y:12, type:CELLTYPES.BOUNDARY},{x:4, y:12, type:CELLTYPES.BOUNDARY},{x:5, y:13, type:CELLTYPES.BOUNDARY},{x:6, y:13, type:CELLTYPES.BOUNDARY},{x:6, y:14, type:CELLTYPES.BOUNDARY},{x:7, y:14, type:CELLTYPES.BOUNDARY},{x:7, y:15, type:CELLTYPES.BOUNDARY},{x:8, y:15, type:CELLTYPES.BOUNDARY},{x:8, y:16, type:CELLTYPES.BOUNDARY},{x:8, y:17, type:CELLTYPES.BOUNDARY},{x:9, y:17, type:CELLTYPES.BOUNDARY},{x:10, y:17, type:CELLTYPES.BOUNDARY},{x:10, y:16, type:CELLTYPES.BOUNDARY},{x:9, y:16, type:CELLTYPES.BOUNDARY},{x:11, y:16, type:CELLTYPES.BOUNDARY},{x:11, y:15, type:CELLTYPES.BOUNDARY},{x:11, y:14, type:CELLTYPES.BOUNDARY},{x:12, y:14, type:CELLTYPES.BOUNDARY},{x:14, y:14, type:CELLTYPES.BOUNDARY},{x:13, y:14, type:CELLTYPES.BOUNDARY},{x:14, y:13, type:CELLTYPES.BOUNDARY},{x:13, y:13, type:CELLTYPES.BOUNDARY},{x:14, y:12, type:CELLTYPES.BOUNDARY},{x:15, y:12, type:CELLTYPES.BOUNDARY},{x:15, y:13, type:CELLTYPES.BOUNDARY},{x:16, y:12, type:CELLTYPES.BOUNDARY},{x:16, y:11, type:CELLTYPES.BOUNDARY},{x:15, y:11, type:CELLTYPES.BOUNDARY},{x:16, y:10, type:CELLTYPES.BOUNDARY},{x:17, y:9, type:CELLTYPES.BOUNDARY},{x:16, y:9, type:CELLTYPES.BOUNDARY},{x:17, y:8, type:CELLTYPES.BOUNDARY},{x:17, y:7, type:CELLTYPES.BOUNDARY},{x:7, y:18, type:CELLTYPES.EASY_PASSWORD5},{x:11, y:18, type:CELLTYPES.EASY_PASSWORD5}
+    ],
     []
 ];
 
@@ -777,6 +781,11 @@ var MazeRunner = (function ($) {
             return {expected: color[1], prompt:color[0]};
         } else if (cell.type == CELLTYPES.EASY_PASSWORD4){
             return cell.prompt;
+        }
+
+        if(cell.type == CELLTYPES.EASY_PASSWORD5){
+            var x = Math.floor(Math.random() * 100);
+            return {expected: x%2==0, prompt:x};
         }
 
         return {expected: expected, prompt: prompt};
