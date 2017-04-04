@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze Game</title>
+    <link rel="stylesheet" type="text/css" href="../../core/maze-runner-core.css"/>
+    <script src="../../core/jquery-3.2.0.js"></script>
+    <script src="../../core/maze-runner-core.js"></script>
+    <script src="level18.js"></script>
+    <script>
+        window.onload = function(){
+            MazeRunner.initLevel18();
+        }
+    </script>
+</head>
+<body>
+<h2>Level 18</h2>
+<ul>
+    <li><b>Zigzags are hard!</b> It looks like we might have to right a ton of code. Luckily there's an easier way</li>
+    <li><b>First</b> tell your cabbage man to move right once, up nine times, and right once more. This should get you to the start of the Zigzag</li>
+    <li>It looks like we need to move right and down 14 times. We can do that with a loop: <br> <img width="500px;" src="../../core/level18.png"/></li>
+    <li>This should get your cabbage man to the bottom of the zigzag. It should be easy to finish the level now.</li>
+
+</ul>
+<div id="level"></div>
+</body>
+</html>
