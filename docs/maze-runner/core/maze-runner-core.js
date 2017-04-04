@@ -1052,6 +1052,21 @@ var MazeRunner = (function ($) {
         initLevel20: function () {
             doRunLevel(20);
         },
+        initLevel21: function() {
+            doRunLevel(21);
+        },
+        initLevel22: function(){
+            doRunLevel(22);
+        },
+        initLevel23: function(){
+            doRunLevel(23);
+        },
+        initLevel24: function(){
+            doRunLevel(24);
+        },
+        initLevel25: function(){
+            doRunLevel(25);
+        },
         CabbageMan: CabbageMan,
         actionList: actionList
     };
