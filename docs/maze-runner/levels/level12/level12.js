@@ -1,34 +1,27 @@
 
 
 function decidePassword(prompt){
-    if(prompt == "CYAN"){
-        return "NAYC";
-    } else if (prompt == "PINK") {
-        return "KNIP";
-    } else if (prompt == "RED"){
-        return "DER";
-    } else if (prompt=="BLUE"){
-        return "EULB";
-    } else if (prompt == "GRAY"){
-        return "YARG"
+    var expected = "";
+    if(prompt == 1){
+        expected = "ONE";
+    } else if(prompt == 2){
+        expected = "TWO";
+    } else if(prompt == 3){
+        expected = "THREE";
     }
+    return expected;
 }
 
 function runLevel(){
     var cabbageMan = new MazeRunner.CabbageMan();
+    cabbageMan.moveRight(1);
+    cabbageMan.moveDown(8);
+    cabbageMan.calculatePassword("RIGHT", decidePassword);
+    cabbageMan.moveRight(7);
+    cabbageMan.calculatePassword("RIGHT", decidePassword);
+    cabbageMan.moveRight(8);
+    cabbageMan.calculatePassword("RIGHT", decidePassword);
     cabbageMan.moveRight(2);
-    cabbageMan.moveUp();
-    cabbageMan.calculatePassword("UP", decidePassword);
-    cabbageMan.moveUp();
-    cabbageMan.moveRight();
-    cabbageMan.calculatePassword("RIGHT", decidePassword);
-    cabbageMan.moveRight(4);
-    cabbageMan.calculatePassword("RIGHT", decidePassword);
-    cabbageMan.moveRight(4);
-    cabbageMan.calculatePassword("DOWN", decidePassword);
-    cabbageMan.moveDown();
-    cabbageMan.moveRight(2);
-    cabbageMan.moveDown();
-    cabbageMan.calculatePassword("RIGHT", decidePassword);
-    cabbageMan.moveRight(6);
+    cabbageMan.moveUp(8);
+    cabbageMan.moveRight(1);
 }
