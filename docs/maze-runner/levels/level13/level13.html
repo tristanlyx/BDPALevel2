@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze Game</title>
+    <link rel="stylesheet" type="text/css" href="../../core/maze-runner-core.css"/>
+    <script src="../../core/jquery-3.2.0.js"></script>
+    <script src="../../core/maze-runner-core.js"></script>
+    <script src="level13.js"></script>
+    <script>
+        window.onload = function(){
+            MazeRunner.initLevel13();
+        }
+    </script>
+</head>
+<body>
+<h2>Level 13</h2>
+<ul>
+    <li><b>The password is changed!!!</b></li>
+    <li>Your <code>decidePassword</code> will be passed a color name prompt. It will be either "RED", "CYAN", "BLUE", "GRAY", or "PINK"</li>
+    <li>Your function needs to return the name of the color backwards. e.g. if prompt is "RED", then you'd return "DER". If prompt is "BLUE", you'd return "EULB", and so on.</li>
+</ul>
+<div id="level"></div>
+</body>
+</html>

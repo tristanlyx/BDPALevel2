@@ -6,16 +6,20 @@
     <link rel="stylesheet" type="text/css" href="../../core/maze-runner-core.css"/>
     <script src="../../core/jquery-3.2.0.js"></script>
     <script src="../../core/maze-runner-core.js"></script>
+    <script src="level11.js"></script>
     <script>
         window.onload = function(){
-            //MazeRunner.initLevel10();
+            MazeRunner.initLevel11();
         }
     </script>
 </head>
 <body>
-<h2>YOU WON!!!!!!!!!!!!!!!!!!!</h2>
-(kind of. More levels coming soon, but Davids need to sleep too)
+<h2>Level 11</h2>
 <ul>
+    <li><b>The password is changed!!!</b></li>
+    <li>You need to change your <code>decidePassword</code> function so that it returns the result of adding 1 to the prompt and then dividing by 2</li>
+    <li>For example: if the prompt is 4, you should return 2.5. If the prompt is 3 you should return 2</li>
+    <li><b>Remember order of operations!!!</b></li>
 </ul>
 <div id="level"></div>
 </body>

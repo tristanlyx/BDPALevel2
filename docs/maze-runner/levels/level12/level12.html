@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze Game</title>
+    <link rel="stylesheet" type="text/css" href="../../core/maze-runner-core.css"/>
+    <script src="../../core/jquery-3.2.0.js"></script>
+    <script src="../../core/maze-runner-core.js"></script>
+    <script src="level12.js"></script>
+    <script>
+        window.onload = function(){
+            MazeRunner.initLevel12();
+        }
+    </script>
+</head>
+<body>
+<h2>Level 12</h2>
+<ul>
+    <li><b>The password is changed!!!</b></li>
+    <li>In this level prompt will be either 1, 2, or 3</li>
+    <li>You need to change your <code>decidePassword</code> function so that it returns the name of the number in all caps</li>
+    <li>For example: if the prompt is 1, return "ONE". If it's 2, then return "TWO". If it's 3, then return "THREE"</li>
+</ul>
+<div id="level"></div>
+</body>
+</html>

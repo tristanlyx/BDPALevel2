@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze Game</title>
+    <link rel="stylesheet" type="text/css" href="../../core/maze-runner-core.css"/>
+    <script src="../../core/jquery-3.2.0.js"></script>
+    <script src="../../core/maze-runner-core.js"></script>
+    <script src="level17.js"></script>
+    <script>
+        window.onload = function(){
+            MazeRunner.initLevel17();
+        }
+    </script>
+</head>
+<body>
+<h2>Level 17</h2>
+<ul>
+    <li><b>The password is changed!!!</b></li>
+    <li>In this level the prompt is an Array with two numbers.</li>
+    <li>Your <code>decidePassword</code> will compare the two numbers to see which one is bigger</li>
+    <li>If the 0th number is bigger, it should return 0. If the 1th number is bigger, it should return 1</li>
+    <li>If the two numbers are the same size, then you should return "EQUAL"</li>
+    <li><b>HINT:</b> You can access the 0th element of the array like this: <code>prompt[0]</code></li>
+    <li><b>HINT:</b> You can access the 1th element of the array like this: <code>prompt[1]</code></li>
+</ul>
+<div id="level"></div>
+</body>
+</html>
